@@ -1,19 +1,29 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { useTheme } from '../../context/ThemeContext';
+import { useTheme } from 'next-themes';
+import { useEffect, useState } from 'react';
 
 export default function ThemeToggle() {
-  const { theme, toggleTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+  const { theme, setTheme } = useTheme();
+
+  // Avoid hydration mismatch
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) return null;
 
   return (
     <motion.button
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.9 }}
-      onClick={toggleTheme}
+      onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
       className={`p-2 rounded-full ${
         theme === 'dark' ? 'bg-gray-800' : 'bg-gray-200'
       }`}
+      aria-label="Toggle theme"
     >
       {theme === 'dark' ? (
         <svg
@@ -38,4 +48,4 @@ export default function ThemeToggle() {
       )}
     </motion.button>
   );
-} 
+}
