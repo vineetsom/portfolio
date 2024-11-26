@@ -34,6 +34,7 @@ export const NavbarMenu = () => {
     { name: "Projects", link: "#projects" },
     { name: "Experience", link: "#experience" },
     { name: "Certifications", link: "#certifications" },
+    { name: "Contact", link: "#contact" },
   ];
 
   const toggleMenu = () => {

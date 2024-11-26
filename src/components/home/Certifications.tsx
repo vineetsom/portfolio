@@ -6,53 +6,35 @@ import { CardHoverEffect } from '../ui/card-hover-effect';
 
 const certifications = [
   {
-    title: "AWS Certified Solutions Architect",
-    subtitle: "Amazon Web Services",
-    date: "Jan 2024",
+    title: "Core Java Programming Course",
+    subtitle: "Rooman Technologies",
+    date: "Aug 2020",
     link: "https://www.credly.com/badges/example"
   },
   {
-    title: "Professional Scrum Master I",
-    subtitle: "Scrum.org",
-    date: "Dec 2023",
-    link: "https://www.scrum.org/certificates/example"
+    title: "REST APIs with Spring and Java Skill Path",
+    subtitle: "Codecademy",
+    date: "Apr 2024",
+    link: "https://www.codecademy.com/profiles/digital2389255491/certificates/60f1edf0ac9368001c6025c4"
   },
   {
-    title: "Microsoft Azure Fundamentals",
-    subtitle: "Microsoft",
-    date: "Nov 2023",
-    link: "https://learn.microsoft.com/certifications/example"
+    title: "J.P. Morgan - Software Engineering Job Simulation",
+    subtitle: "Forage",
+    date: "Feb 2024",
+    link: "https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/J.P.%20Morgan/R5iK7HMxJGBgaSbvk_J.P.%20Morgan_HJHgEHLjtF3KBfAnM_1708033826214_completion_certificate.pdf"
   },
   {
-    title: "Google Cloud Professional Data Engineer",
-    subtitle: "Google Cloud",
-    date: "Oct 2023",
+    title: "Complete Web Developer Course",
+    subtitle: "Udemy",
+    date: "May 2020",
     link: "https://www.credential.net/example"
   },
   {
-    title: "Databricks Certified Associate Developer",
-    subtitle: "Databricks",
-    date: "Sep 2023",
+    title: "Winner Smart India Hackathon 2019",
+    subtitle: "Govt Of India",
+    date: "Mar 2019",
     link: "https://credentials.databricks.com/example"
   },
-  {
-    title: "Snowflake SnowPro Core",
-    subtitle: "Snowflake",
-    date: "Aug 2023",
-    link: "https://www.snowflake.com/certifications/example"
-  },
-  {
-    title: "Apache Kafka Certification",
-    subtitle: "Confluent",
-    date: "Jul 2023",
-    link: "https://www.confluent.io/certification/example"
-  },
-  {
-    title: "MongoDB Certified Developer",
-    subtitle: "MongoDB",
-    date: "Jun 2023",
-    link: "https://university.mongodb.com/certification/example"
-  }
 ];
 
 export default function Certifications() {
