@@ -20,7 +20,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <body className={`${inter.className} min-h-screen bg-gradient-to-b from-white to-neutral-50 dark:from-black dark:to-neutral-950 text-black dark:text-white`}>
         {/* Global Background Pattern */}
         <div className="fixed inset-0 pointer-events-none">
