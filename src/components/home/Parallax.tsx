@@ -118,7 +118,7 @@ const Parallax = () => {
         <h1 className={`${playfair.className} text-2xl md:text-8xl font-bold text-white mb-4 tracking-wider whitespace-nowrap`}>
           Devika Shendkar
         </h1>
-        <p className={`${playfair.className} text-4xl text-white/90 mb-8 font-light tracking-widest `}>
+        <p className={`${playfair.className} text-4xl md:text-2xl text-white/90 mb-8 font-light tracking-widest `}>
           Software Developer
         </p>
         <div className="flex justify-center gap-4">
