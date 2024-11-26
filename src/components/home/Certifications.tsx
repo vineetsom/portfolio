@@ -36,16 +36,9 @@ const certifications = [
     link: "https://credentials.databricks.com/example"
   },
 ];
-
 export default function Certifications() {
   return (
-    <section id="certifications" className="py-16 relative bg-gradient-to-b from-white to-neutral-50 dark:from-black dark:to-neutral-950">
-      {/* Background Pattern */}
-      <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-dot-pattern opacity-30" />
-        <div className="absolute inset-0 bg-gradient-to-t from-white dark:from-black via-transparent to-transparent" />
-      </div>
-
+    <section id="certifications" className="py-16 relative bg-gradient-to-b from-white to-neutral-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -54,7 +47,7 @@ export default function Certifications() {
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-neutral-900 dark:text-white">
+          <h2 className="text-4xl md:text-5xl font-bold text-neutral-900 mb-4">
             Certifications
           </h2>
         </motion.div>
@@ -68,18 +61,18 @@ export default function Certifications() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <CardHoverEffect className="!bg-gradient-to-br !from-white/5 !to-white/10 dark:!from-neutral-900/50 dark:!to-neutral-800/50 backdrop-blur-sm !border-0 shadow-lg">
+              <CardHoverEffect className="!bg-gradient-to-br !from-white/5 !to-white/10 backdrop-blur-sm !border-0 shadow-lg">
                 <div className="p-6">
                   <div className="flex justify-between items-start mb-2">
-                    <h3 className="font-bold text-lg bg-gradient-to-r from-neutral-900 via-violet-600 to-violet-400 dark:from-white dark:via-violet-400 dark:to-violet-200 bg-clip-text text-transparent">
+                    <h3 className="font-bold text-lg bg-gradient-to-r from-neutral-900 via-violet-600 to-violet-400 bg-clip-text text-transparent">
                       {cert.title}
                     </h3>
-                    <span className="text-sm text-neutral-500 dark:text-neutral-400 whitespace-nowrap ml-4">
+                    <span className="text-sm text-neutral-500 whitespace-nowrap ml-4">
                       {cert.date}
                     </span>
                   </div>
                   <div className="flex items-center justify-between">
-                    <p className="text-sm text-neutral-600 dark:text-neutral-400">
+                    <p className="text-sm text-neutral-600">
                       {cert.subtitle}
                     </p>
                     <MagicButton 
