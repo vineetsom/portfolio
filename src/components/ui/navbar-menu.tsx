@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { cn } from "../../utils/cn";
+import ThemeToggle from "./ThemeToggle";
 
 export const NavbarMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -82,7 +83,7 @@ export const NavbarMenu = () => {
           </Link>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center justify-end">
+          <div className="hidden md:flex items-center justify-end space-x-4">
             <div className={cn(
               "flex flex-row items-center justify-center space-x-2 rounded-full p-2 px-4 backdrop-blur-md shadow-lg transition-colors duration-300",
               isBeforeAbout
@@ -93,37 +94,41 @@ export const NavbarMenu = () => {
                 <MenuItem key={item.name} item={item} />
               ))}
             </div>
+            <ThemeToggle />
           </div>
 
           {/* Mobile Menu Button */}
-          <button
-            onClick={toggleMenu}
-            className={cn(
-              "md:hidden p-2 rounded-lg transition-colors",
-              isBeforeAbout
-                ? "hover:bg-white/10"
-                : "hover:bg-white/20 dark:hover:bg-white/10"
-            )}
-            aria-label="Toggle menu"
-          >
-            <div className="w-6 h-5 relative flex flex-col justify-between">
-              <span className={cn(
-                "w-full h-0.5 transition-transform duration-300",
-                isBeforeAbout ? "bg-white" : "bg-neutral-900 dark:bg-white",
-                isOpen ? 'rotate-45 translate-y-2' : ''
-              )} />
-              <span className={cn(
-                "w-full h-0.5 transition-opacity duration-300",
-                isBeforeAbout ? "bg-white" : "bg-neutral-900 dark:bg-white",
-                isOpen ? 'opacity-0' : ''
-              )} />
-              <span className={cn(
-                "w-full h-0.5 transition-transform duration-300",
-                isBeforeAbout ? "bg-white" : "bg-neutral-900 dark:bg-white",
-                isOpen ? '-rotate-45 -translate-y-2' : ''
-              )} />
-            </div>
-          </button>
+          <div className="md:hidden flex items-center space-x-2">
+            <ThemeToggle />
+            <button
+              onClick={toggleMenu}
+              className={cn(
+                "p-2 rounded-lg transition-colors",
+                isBeforeAbout
+                  ? "hover:bg-white/10"
+                  : "hover:bg-white/20 dark:hover:bg-white/10"
+              )}
+              aria-label="Toggle menu"
+            >
+              <div className="w-6 h-5 relative flex flex-col justify-between">
+                <span className={cn(
+                  "w-full h-0.5 transition-transform duration-300",
+                  isBeforeAbout ? "bg-white" : "bg-neutral-900 dark:bg-white",
+                  isOpen ? 'rotate-45 translate-y-2' : ''
+                )} />
+                <span className={cn(
+                  "w-full h-0.5 transition-opacity duration-300",
+                  isBeforeAbout ? "bg-white" : "bg-neutral-900 dark:bg-white",
+                  isOpen ? 'opacity-0' : ''
+                )} />
+                <span className={cn(
+                  "w-full h-0.5 transition-transform duration-300",
+                  isBeforeAbout ? "bg-white" : "bg-neutral-900 dark:bg-white",
+                  isOpen ? '-rotate-45 -translate-y-2' : ''
+                )} />
+              </div>
+            </button>
+          </div>
         </motion.div>
 
         {/* Mobile Menu */}
@@ -155,4 +160,3 @@ export const NavbarMenu = () => {
 }
 
 export default NavbarMenu;
-
