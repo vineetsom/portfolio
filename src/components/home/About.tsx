@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import imageLoader from '../../lib/imageLoader';
 
 export default function About() {
   return (
@@ -18,9 +19,9 @@ export default function About() {
             {/* Background Image */}
             <div className="absolute inset-0 w-full h-full">
               <Image
+                loader={imageLoader}
                 src="/images/peach.png"
                 alt="Background"
-                // fill
                 width={2000}
                 height={2000}
                 className="object-cover"
@@ -50,7 +51,6 @@ export default function About() {
                   times: [0, 0.33, 0.66, 1]
                 }}
                 style={{
-                  // Initial border radius to prevent flicker on load
                   borderRadius: '60% 40% 30% 70%/60% 30% 70% 40%'
                 }}
               >
@@ -68,6 +68,7 @@ export default function About() {
                   }}
                 >
                   <Image
+                    loader={imageLoader}
                     src="/images/devika1.png"
                     alt="Profile"
                     fill
