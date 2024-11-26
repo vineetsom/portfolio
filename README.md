@@ -2,6 +2,10 @@
 
 A modern, responsive portfolio website built with Next.js, TypeScript, and Tailwind CSS.
 
+## Live Demo
+
+Visit the live portfolio at: [https://devika7300.github.io/portfolio/](https://devika7300.github.io/portfolio/)
+
 ## Features
 
 - 📱 Fully responsive design
@@ -16,6 +20,7 @@ A modern, responsive portfolio website built with Next.js, TypeScript, and Tailw
 - **Language:** TypeScript
 - **Styling:** Tailwind CSS
 - **Animation:** Framer Motion
+- **Deployment:** GitHub Pages
 - **Version Control:** Git & GitHub
 
 ## Sections
@@ -47,6 +52,15 @@ npm run dev
 
 4. Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
 
+## Deployment
+
+The portfolio is automatically deployed to GitHub Pages using GitHub Actions whenever changes are pushed to the main branch. The deployment workflow:
+
+1. Builds the Next.js application
+2. Generates static files
+3. Deploys to GitHub Pages
+4. Makes the site available at [https://devika7300.github.io/portfolio/](https://devika7300.github.io/portfolio/)
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
@@ -54,6 +68,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## Author
 
 **Devika Shendkar**
-- Portfolio: [Your Portfolio URL]
-- LinkedIn: [Your LinkedIn URL]
+- Portfolio: [https://devika7300.github.io/portfolio/](https://devika7300.github.io/portfolio/)
+- LinkedIn: [devika-shendkar](https://www.linkedin.com/in/devika-shendkar/)
 - GitHub: [@devika7300](https://github.com/devika7300)
