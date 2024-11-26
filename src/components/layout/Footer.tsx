@@ -21,20 +21,13 @@ const socialLinks = [
       </svg>
     ),
   },
-  // {
-  //   name: 'Medium',
-  //   url: 'https://medium.com/@akhileshjadhav',
-  //   icon: (
-  //     <span className="font-serif font-bold text-xl">M</span>
-  //   ),
-  // },
 ];
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="relative">
+    <footer className="relative ">
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="flex flex-col items-center justify-center space-y-6">
           {/* Social Links */}

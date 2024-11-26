@@ -26,7 +26,7 @@ export default function RootLayout({
       <body className={`${inter.className} min-h-screen bg-gradient-to-b from-white to-neutral-50 dark:from-black dark:to-neutral-950 text-black dark:text-white`}>
         {/* Global Background Pattern */}
         <div className="fixed inset-0 pointer-events-none">
-          <div className="absolute inset-0 bg-dot-pattern opacity-30" />
+          <div className="absolute inset-0  opacity-30" />
           <div className="absolute inset-0 bg-gradient-to-t from-white/80 dark:from-black/80 via-transparent to-transparent" />
         </div>
         

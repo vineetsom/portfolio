@@ -38,7 +38,7 @@ const certifications = [
 ];
 export default function Certifications() {
   return (
-    <section id="certifications" className="py-16 relative bg-gradient-to-b from-white to-neutral-50">
+    <section id="certifications" className="py-16 relative bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
