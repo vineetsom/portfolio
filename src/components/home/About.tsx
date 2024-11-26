@@ -20,7 +20,7 @@ export default function About() {
             <div className="absolute inset-0 w-full h-full">
               <Image
                 loader={imageLoader}
-                src="/images/peach.png"
+                src="images/peach.png"
                 alt="Background"
                 width={2000}
                 height={2000}
@@ -69,7 +69,7 @@ export default function About() {
                 >
                   <Image
                     loader={imageLoader}
-                    src="/images/devika1.png"
+                    src="images/devika1.png"
                     alt="Profile"
                     fill
                     className="object-cover"
