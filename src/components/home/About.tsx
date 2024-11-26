@@ -129,7 +129,7 @@ export default function About() {
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.4 }}
             >
-              FullStack Developer
+              Software Developer
             </motion.h3>
 
             <motion.p 
@@ -138,9 +138,10 @@ export default function About() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.5 }}
             >
-              I&apos;m a computer science graduate student with 1+ years of hands-on experience, 
+              I&apos;m a recent computer science graduate from Syracuse University, with a Master's 
+              degree completed in May 2024. With 3+ years of hands-on experience, 
               fueled by a love for coding. Currently on the lookout for exciting opportunities in 
-              Web Development, Fullstack, Data Science, and Mobile Application Development. 
+              Web Development, Full-stack, and Mobile Application Development. 
               I&apos;m eager to bring my skills and enthusiasm to a dynamic team.
             </motion.p>
 

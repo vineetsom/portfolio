@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Inter, Playfair_Display, Space_Grotesk } from 'next/font/google'
 import './globals.css'
 import Footer from '../components/layout/Footer'
 import CustomCursor from '../components/ui/CustomCursor'
@@ -11,6 +11,8 @@ import ClientOnly from '../components/ClientOnly';
 import NavbarMenu from '../components/ui/navbar-menu';
 
 const inter = Inter({ subsets: ['latin'] })
+const playfair = Playfair_Display({ subsets: ['latin'] })
+const spaceGrotesk = Space_Grotesk({ subsets: ['latin'] })
 
 export const metadata: Metadata = generateMetadata('/')
 

@@ -4,6 +4,9 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { cn } from "../../utils/cn";
+import { Dancing_Script } from 'next/font/google';
+
+const dancingScript = Dancing_Script({ subsets: ['latin'] });
 
 export const NavbarMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -70,7 +73,8 @@ export const NavbarMenu = () => {
           <Link 
             href="/" 
             className={cn(
-              "text-2xl font-signature",
+              dancingScript.className,
+              "text-3xl",
               isBeforeAbout
                 ? "text-white hover:text-violet-200"
                 : "text-neutral-900 dark:text-white hover:text-neutral-600 dark:hover:text-neutral-300",
@@ -155,5 +159,3 @@ export const NavbarMenu = () => {
 }
 
 export default NavbarMenu;
-
-

@@ -1,6 +1,11 @@
 "use client";
 import { useScroll, useTransform, motion } from "framer-motion";
 import { useRef } from "react";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { Playfair_Display, Space_Grotesk } from 'next/font/google';
+
+const playfair = Playfair_Display({ subsets: ['latin'] });
+const spaceGrotesk = Space_Grotesk({ subsets: ['latin'] });
 
 const Parallax = () => {
   const ref = useRef(null);
@@ -9,10 +14,12 @@ const Parallax = () => {
     offset: ["start start", "end start"],
   });
 
-  // Fast, smooth sunrise from below text to above
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+  const translateYValue = isMobile ? -300 : -700;
+
   const sunY = useTransform(scrollYProgress, 
-    [0, 0.4], // Very short range for quick effect
-    ["330%", "50%"] // Starts below text (70%) and moves above it (20%)
+    [0, 0.4], 
+    ["330%", "50%"]
   );
   const mountainY = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
 
@@ -66,63 +73,8 @@ const Parallax = () => {
         </div>
       </motion.div>
 
-      {/* Original mountains code - untouched */}
-      {/* <div className="absolute bottom-0 w-full">
-        <svg 
-          viewBox="0 0 1440 320" 
-          className="w-full absolute bottom-0"
-          style={{ height: '45vh' }}
-          preserveAspectRatio="none"
-        >
-          <path
-            d="M0,100 
-               C240,200 360,50 480,150 
-               C600,250 660,100 720,200 
-               C780,300 840,150 960,200 
-               C1080,250 1200,100 1440,150 
-               L1440,320 L0,320 Z"
-            fill="#8B3E5D"
-            opacity="0.6"
-          />
-        </svg>
-
-        <svg 
-          viewBox="0 0 1440 320" 
-          className="w-full absolute bottom-0"
-          style={{ height: '42vh' }}
-          preserveAspectRatio="none"
-        >
-          <path
-            d="M0,150 
-               C180,250 300,100 480,200 
-               C660,300 690,150 720,250 
-               C750,350 780,200 960,250 
-               C1140,300 1260,150 1440,200 
-               L1440,320 L0,320 Z"
-            fill="#3D1D5C"
-            opacity="0.8"
-          />
-        </svg>
-
-        <svg 
-          viewBox="0 0 1440 320" 
-          className="w-full absolute bottom-0"
-          style={{ height: '40vh' }}
-          preserveAspectRatio="none"
-        >
-          <path
-            d="M0,200 
-               C180,300 300,150 480,250 
-               C600,320 660,200 720,400 
-               C780,200 840,250 960,300 
-               C1080,350 1200,200 1440,250 
-               L1440,320 L0,320 Z"
-            fill="#2C1B4D"
-          />
-        </svg>
-      </div> */}
-        {/* Mountains - Back Layer */}
-        <motion.div
+      {/* Mountains */}
+      <motion.div
         className="absolute bottom-0 w-full"
         style={{ y: mountainY }}
       >
@@ -160,12 +112,53 @@ const Parallax = () => {
         style={{ opacity: useTransform(scrollYProgress, [0, 0.04], [1, 0]) }}
         className="absolute top-1/4 left-1/2 -translate-x-1/2 text-center z-10"
       >
-        <h1 className="text-6xl font-bold text-white mb-4 tracking-wider">
-          Welcome to My Portfolio
-        </h1>
-        <p className="text-xl text-white/90">
-          Scroll to begin the journey
+        <p className={`${spaceGrotesk.className} text-xs md:text-lg text-white/80 mb-2 max-w-md mx-auto tracking-wide font-light whitespace-nowrap`}>
+          From logic to Legos, I build solutions with precision.
         </p>
+        <h1 className={`${playfair.className} text-2xl md:text-8xl font-bold text-white mb-4 tracking-wider whitespace-nowrap`}>
+          Devika Shendkar
+        </h1>
+        <p className={`${playfair.className} text-4xl text-white/90 mb-8 font-light tracking-widest `}>
+          Software Developer
+        </p>
+        <div className="flex justify-center gap-4">
+          <motion.a
+            href="https://github.com/devika7300"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            className="p-3 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
+          >
+            <FaGithub className="w-6 h-6 text-white" />
+          </motion.a>
+          <motion.a
+            href="https://www.linkedin.com/in/devika-shendkar/"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            className="p-3 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
+          >
+            <FaLinkedin className="w-6 h-6 text-white" />
+          </motion.a>
+        </div>
+      </motion.div>
+
+      {/* Scroll Indicator */}
+      <motion.div
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+        animate={{ y: [0, 10, 0] }}
+        transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+      >
+        <div className="w-4 h-8 rounded-full border-2 border-white/50 flex justify-center pt-2">
+          <motion.div
+            className="w-1 h-2 bg-white/50 rounded-full"
+            animate={{ y: [0, 12, 0] }}
+            transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+          />
+        </div>
+        <span className={`${spaceGrotesk.className} text-white/40 mb-6 text-sm uppercase tracking-widest`}>Scroll</span>
       </motion.div>
     </div>
   );
