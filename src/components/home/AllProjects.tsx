@@ -8,6 +8,7 @@ import { CardBody, CardContainer, CardItem } from "../ui/3d-card";
 import Link from "next/link";
 import { projects } from "../../lib/metadata";
 import { IconType } from "react-icons";
+import imageLoader from "../../lib/imageLoader";
 
 interface ProjectIcon {
   icon: IconType;
@@ -90,9 +91,11 @@ export function AllProjects() {
                   >
                     <div className="relative w-full aspect-[16/10] rounded-lg overflow-hidden bg-zinc-100 dark:bg-zinc-800">
                       <Image
+                        loader={imageLoader}
                         src={project.img}
                         alt={project.title}
                         fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                         className="object-cover transform transition-all duration-500 group-hover/card:scale-105"
                       />
                     </div>
