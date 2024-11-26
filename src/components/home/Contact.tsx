@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { FaEnvelope } from 'react-icons/fa';
 
 export default function Contact() {
-  const email = "devikashendkar@gmail.com";
+  const email = "devikavid@gmail.com";
 
   return (
     <section id="contact" className="py-24 relative bg-gradient-to-b from-white to-neutral-50">
