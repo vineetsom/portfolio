@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { cn } from "../../utils/cn";
 import { Dancing_Script } from 'next/font/google';
+import ThemeToggle from "./ThemeToggle";
 
 const dancingScript = Dancing_Script({ subsets: ['latin'] });
 
@@ -17,13 +18,12 @@ export const NavbarMenu = () => {
       const aboutSection = document.getElementById('about');
       if (aboutSection) {
         const rect = aboutSection.getBoundingClientRect();
-        // We're before About section if the About section hasn't reached the top yet
         setIsBeforeAbout(rect.top > 0);
       }
     };
 
     window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Initial check
+    handleScroll();
 
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -97,6 +97,14 @@ export const NavbarMenu = () => {
               {menuItems.map((item) => (
                 <MenuItem key={item.name} item={item} />
               ))}
+              <div className={cn(
+                "pl-2 border-l",
+                isBeforeAbout
+                  ? "border-white/10"
+                  : "border-neutral-300 dark:border-neutral-700"
+              )}>
+                <ThemeToggle />
+              </div>
             </div>
           </div>
 
@@ -150,6 +158,22 @@ export const NavbarMenu = () => {
                 {menuItems.map((item) => (
                   <MenuItem key={item.name} item={item} mobile />
                 ))}
+                <div className={cn(
+                  "pt-2 mt-2 border-t flex items-center",
+                  isBeforeAbout
+                    ? "border-white/10"
+                    : "border-neutral-200 dark:border-neutral-700"
+                )}>
+                  <span className={cn(
+                    "text-sm mr-3",
+                    isBeforeAbout
+                      ? "text-white/70"
+                      : "text-neutral-600 dark:text-neutral-400"
+                  )}>
+                    Toggle theme
+                  </span>
+                  <ThemeToggle />
+                </div>
               </div>
             </motion.div>
           )}

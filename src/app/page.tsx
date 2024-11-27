@@ -8,14 +8,34 @@ import Contact from '../components/home/Contact';
 
 export default function Home() {
   return (
-    <main className="min-h-screen">
-      <Parallax />
-      <About />
-      <SkillsParallax />
-      <AllProjects />
-      <Experience />
-      <Certifications />
-      <Contact />
-    </main>
+    <>
+      <section className="relative h-screen">
+        <Parallax />
+      </section>
+      
+      <section className="relative bg-white dark:bg-neutral-950">
+        <About />
+      </section>
+      
+      <section className="relative bg-neutral-50 dark:bg-black">
+        <SkillsParallax />
+      </section>
+      
+      <section className="relative bg-white dark:bg-neutral-950">
+        <AllProjects />
+      </section>
+      
+      <section className="relative bg-neutral-50 dark:bg-black">
+        <Experience />
+      </section>
+      
+      <section className="relative bg-white dark:bg-neutral-950">
+        <Certifications />
+      </section>
+      
+      <section className="relative bg-neutral-50 dark:bg-black">
+        <Contact />
+      </section>
+    </>
   );
 }

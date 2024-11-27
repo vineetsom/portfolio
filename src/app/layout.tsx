@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Inter, Playfair_Display, Space_Grotesk } from 'next/font/google'
 import './globals.css'
 import Footer from '../components/layout/Footer'
@@ -16,14 +16,15 @@ const playfair = Playfair_Display({ subsets: ['latin'] })
 const spaceGrotesk = Space_Grotesk({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  ...generateMetadata('/'),
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-    maximumScale: 1,
-    userScalable: false,
-    viewportFit: 'cover',
-  },
+  ...generateMetadata('/')
+}
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+  viewportFit: 'cover',
 }
 
 export default function RootLayout({
@@ -46,7 +47,6 @@ export default function RootLayout({
           // Update on resize and orientation change
           window.addEventListener('resize', setViewportHeight);
           window.addEventListener('orientationchange', () => {
-            // Small delay to ensure new dimensions are available
             setTimeout(setViewportHeight, 100);
           });
           
@@ -56,20 +56,13 @@ export default function RootLayout({
           // Update on scroll for mobile browsers
           if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
             window.addEventListener('scroll', () => {
-              // Debounce the scroll event
               clearTimeout(window.scrollTimeout);
               window.scrollTimeout = setTimeout(setViewportHeight, 100);
             });
           }
         `}</Script>
       </head>
-      <body className={`${inter.className} min-h-screen-dynamic bg-gradient-to-b from-white to-neutral-50 dark:from-black dark:to-neutral-950 text-black dark:text-white`}>
-        {/* Global Background Pattern */}
-        <div className="fixed inset-0 pointer-events-none">
-          <div className="absolute inset-0  opacity-30" />
-          <div className="absolute inset-0 bg-gradient-to-t from-white/80 dark:from-black/80 via-transparent to-transparent" />
-        </div>
-        
+      <body className={`${inter.className} min-h-screen text-black dark:text-white bg-transparent`}>
         <ThemeProvider>
           <ClientOnly>
             <CustomCursor />

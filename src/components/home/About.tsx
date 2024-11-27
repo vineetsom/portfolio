@@ -3,10 +3,14 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import imageLoader from '../../lib/imageLoader';
+import { useTheme } from 'next-themes';
 
 export default function About() {
+  const { theme } = useTheme();
+  const isDark = theme === 'dark';
+
   return (
-    <section id="about" className="min-h-screen py-24 relative bg-white dark:bg-zinc-900 overflow-hidden">
+    <section id="about" className="min-h-screen py-24 relative bg-white dark:bg-black overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Left side with background and morphing bubble */}
@@ -18,16 +22,30 @@ export default function About() {
           >
             {/* Background Image */}
             <div className="absolute inset-0 w-full h-full">
-              <Image
-                loader={imageLoader}
-                src="images/peach.png"
-                alt="Background"
-                width={2000}
-                height={2000}
-                className="object-cover"
-                priority
-                sizes="(max-width: 768px) 100vw, 50vw"
-              />
+              <div className="absolute inset-0 w-full h-full">
+                <Image
+                  loader={imageLoader}
+                  src={isDark ? "images/bg-dark.png" : "images/peach.png"}
+                  alt="Background"
+                  fill
+                  className="object-cover object-left"
+                  priority
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  quality={100}
+                  style={{
+                    clipPath: 'polygon(0 0, 100% 0, 85% 100%, 0% 100%)'
+                  }}
+                />
+              </div>
+              {/* Overlay for dark theme */}
+              {isDark && (
+                <div 
+                  className="absolute inset-0 bg-black/30 backdrop-blur-[1px]"
+                  style={{
+                    clipPath: 'polygon(0 0, 100% 0, 85% 100%, 0% 100%)'
+                  }}
+                />
+              )}
             </div>
 
             {/* Fixed position morphing bubble */}
