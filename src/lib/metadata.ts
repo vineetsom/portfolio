@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
-import { FaReact, FaAws, FaMoneyCheckAlt, FaExchangeAlt } from "react-icons/fa";
+import { FaReact, FaAws, FaMoneyCheckAlt, FaExchangeAlt, FaCloud, FaAndroid, FaMicrochip, FaRaspberryPi, FaTasks } from "react-icons/fa";
 import { FaJava } from 'react-icons/fa6';
-import { SiSpringboot, SiMysql, SiTypescript, SiNextdotjs, SiChartdotjs, SiTailwindcss, SiAppwrite, SiNodedotjs, SiExpress, SiPostgresql, SiPrisma, SiSpring, SiPostman, SiHibernate, SiGithub } from "react-icons/si";
+import { SiSpringboot, SiMysql, SiTypescript, SiNextdotjs, SiChartdotjs, SiTailwindcss, SiAppwrite, SiNodedotjs, SiExpress, SiPostgresql, SiPrisma, SiSpring, SiPostman, SiHibernate, SiGithub, SiSwift, SiFirebase, SiXcode } from "react-icons/si";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
 
@@ -134,39 +134,41 @@ export const projects = [
     id: 4,
     title: "Green Guardian - Automated Plant Care System",
     des: "Developed an IoT-based automated plant care system that monitors soil moisture and temperature, triggering automated watering.",
-    img: "images/projects/project2.png",
+    img: "images/projects/project4.png",
     icons: [
-      { icon: FaReact, color: "#61DAFB" },
-      { icon: SiMysql, color: "#00758F" },
-      { icon: SiSpringboot, color: "#6DB33F" },
-      { icon: FaAws, color: "#FF9900" }
+      { icon: FaJava, color: "#007396" },  // Core Java
+      { icon: FaCloud, color: "#0B2C4A" },  // Using a cloud icon for ThingSpeak
+      { icon: FaAndroid, color: "#3DDC84" },  // Android Development
+      { icon: FaMicrochip, color: "#E7352C" },  // Using a microchip icon for ESP32 Microcontrollers
+      { icon: FaRaspberryPi, color: "#C51A4A" }   // ESP32 Microcontrollers (Espressif is the company behind ESP32, using the company color)
     ],
-    link: "https://github.com/devika7300",
+    link: "https://github.com/devika7300/Green-Gardian?tab=readme-ov-file",
   },
   {
     id: 5,
-    title: "Project Management Dashboard",
-    des: "A comprehensive project management tool with real-time updates and team collaboration features.",
-    img: "images/projects/project1.png",
+    title: "Shift Management",
+    des: "A web application that enables streamlined scheduling, real-time adjustments, and enhanced visibility into workforce allocation, thereby boosting overall operational efficiency and reducing labor costs.",
+    img: "images/projects/project5.png",
     icons: [
-      { icon: FaReact, color: "#61DAFB" },
-      { icon: SiMysql, color: "#00758F" },
-      { icon: SiSpringboot, color: "#6DB33F" },
-      { icon: FaAws, color: "#FF9900" }
+      { icon: SiMysql, color: "#00758F" },  // MySQL
+       { icon: SiPostman, color: "#FF6C37" },  // Postman
+      { icon: SiSpringboot, color: "#6DB33F" },  // Spring Boot
+      { icon: FaJava, color: "#007396" },  // Java
+      { icon: FaTasks, color: "#0074D9" },  // Kanban (Using a tasks icon in a blue shade as a symbolic representation)
     ],
-    link: "https://github.com/devika7300",
+    link: "https://github.com/devika7300/Shift-Management",
   },
   {
     id: 6,
-    title: "E-commerce Platform",
-    des: "Full-featured e-commerce solution with inventory management and payment processing.",
-    img: "images/projects/project3.png",
+    title: "EvenToday: Event Planner",
+    des: "This platform facilitates seamless collaboration among event organizers, vendors, and attendees, offering tools for scheduling, budget tracking, and real-time updates.",
+    img: "images/projects/project6.png",
     icons: [
-      { icon: FaReact, color: "#61DAFB" },
-      { icon: SiMysql, color: "#00758F" },
-      { icon: SiSpringboot, color: "#6DB33F" },
-      { icon: FaAws, color: "#FF9900" }
+      { icon: SiSwift, color: "#F05138" },  // Swift (Programming Language)
+      { icon: SiFirebase, color: "#FFCA28" },  // Firebase
+      { icon: SiXcode, color: "#147EFB" },  // Xcode
+      { icon: SiSwift, color: "#007ACC" },  // SwiftUI
     ],
-    link: "https://github.com/devika7300",
+    link: "https://github.com/devika7300/EvenToday",
   },
 ];
