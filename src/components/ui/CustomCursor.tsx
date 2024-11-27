@@ -7,8 +7,19 @@ export default function CustomCursor() {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [isPointer, setIsPointer] = useState(false);
   const [isPressed, setIsPressed] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
+    // Only show custom cursor on devices with mouse
+    const isTouchDevice = () => {
+      return (('ontouchstart' in window) ||
+        (navigator.maxTouchPoints > 0) ||
+        // @ts-ignore
+        (navigator.msMaxTouchPoints > 0));
+    };
+
+    setIsVisible(!isTouchDevice());
+
     const handleMouseMove = (e: MouseEvent) => {
       setPosition({ x: e.clientX, y: e.clientY });
       
@@ -24,9 +35,11 @@ export default function CustomCursor() {
     const handleMouseDown = () => setIsPressed(true);
     const handleMouseUp = () => setIsPressed(false);
 
-    window.addEventListener('mousemove', handleMouseMove);
-    window.addEventListener('mousedown', handleMouseDown);
-    window.addEventListener('mouseup', handleMouseUp);
+    if (!isTouchDevice()) {
+      window.addEventListener('mousemove', handleMouseMove);
+      window.addEventListener('mousedown', handleMouseDown);
+      window.addEventListener('mouseup', handleMouseUp);
+    }
 
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
@@ -35,15 +48,17 @@ export default function CustomCursor() {
     };
   }, []);
 
+  if (!isVisible) return null;
+
   return (
     <>
       {/* Main cursor dot */}
       <motion.div
-        className="fixed top-0 left-0 w-3 h-3 pointer-events-none z-50 mix-blend-difference"
+        className="fixed top-0 left-0 w-2.5 h-2.5 pointer-events-none z-50 mix-blend-difference hidden sm:block"
         animate={{
-          x: position.x - 6,
-          y: position.y - 6,
-          scale: isPointer ? 1.5 : isPressed ? 0.8 : 1,
+          x: position.x - 5,
+          y: position.y - 5,
+          scale: isPointer ? 1.4 : isPressed ? 0.8 : 1,
         }}
         transition={{
           type: 'spring',
@@ -56,17 +71,17 @@ export default function CustomCursor() {
           w-full h-full rounded-full 
           bg-white
           transition-opacity duration-200
-          ${isPointer ? 'opacity-70' : 'opacity-90'}
+          opacity-100
         `} />
       </motion.div>
 
       {/* Outer ring */}
       <motion.div
-        className="fixed top-0 left-0 w-7 h-7 pointer-events-none z-50 mix-blend-difference"
+        className="fixed top-0 left-0 w-6 h-6 pointer-events-none z-50 mix-blend-difference hidden sm:block"
         animate={{
-          x: position.x - 14,
-          y: position.y - 14,
-          scale: isPointer ? 1.8 : isPressed ? 1.2 : 1,
+          x: position.x - 12,
+          y: position.y - 12,
+          scale: isPointer ? 1.6 : isPressed ? 1.2 : 1,
           rotate: isPointer ? 45 : 0,
         }}
         transition={{
@@ -81,32 +96,8 @@ export default function CustomCursor() {
           rounded-full 
           border border-white
           transition-all duration-200
-          ${isPointer ? 'opacity-70' : 'opacity-50'}
+          ${isPointer ? 'opacity-90' : 'opacity-70'}
           ${isPointer ? 'rounded-lg' : 'rounded-full'}
-        `} />
-      </motion.div>
-
-      {/* Glow effect */}
-      <motion.div
-        className="fixed top-0 left-0 pointer-events-none z-40 mix-blend-difference"
-        animate={{
-          x: position.x - 20,
-          y: position.y - 20,
-          scale: isPointer ? 1.5 : 1,
-        }}
-        transition={{
-          type: 'spring',
-          stiffness: 50,
-          damping: 20,
-        }}
-      >
-        <div className={`
-          w-10 h-10
-          rounded-full
-          bg-white
-          blur-xl
-          transition-opacity duration-200
-          ${isPointer ? 'opacity-50' : 'opacity-30'}
         `} />
       </motion.div>
     </>
