@@ -9,7 +9,7 @@ import Contact from '../components/home/Contact';
 export default function Home() {
   return (
     <main className="min-h-screen">
-      <Parallax />
+      {/* <Parallax /> */}
       <About />
       {/* <SkillsParallax /> */}
       <AllProjects />
