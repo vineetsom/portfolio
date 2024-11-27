@@ -5,8 +5,7 @@ import { motion, useScroll, useSpring } from "framer-motion";
 import { cn } from "../../utils/cn";
 import { CardHoverEffect } from "../ui/card-hover-effect";
 import { experiences } from "../../lib/metadata";
-import { LuPencil } from "react-icons/lu";
-import { FaReact } from "react-icons/fa";
+import { FaEarthAmericas, FaPenFancy, FaReact } from "react-icons/fa6";
 
 interface Experience {
   title: string;
@@ -33,6 +32,8 @@ const TechBadge = ({ children }: { children: React.ReactNode }) => {
     </div>
   );
 };
+
+const icons = [FaEarthAmericas, FaPenFancy, FaReact];
 
 export default function Experience() {
   const ref = React.useRef<HTMLDivElement>(null);
@@ -102,16 +103,21 @@ export default function Experience() {
                     
                     {/* Icon container */}
                     <motion.div
-                      initial={{ scale: 0, rotate: idx % 2 === 0 ? -45 : 0 }}
-                      whileInView={{ scale: 1, rotate: idx % 2 === 0 ? -45 : 0 }}
+                      initial={{ scale: 0, rotate: 0 }}
+                      whileInView={{ 
+                        scale: 1,
+                        rotate: 360,
+                        transition: {
+                          scale: { duration: 0.5 },
+                          rotate: { duration: 1, ease: "easeOut" }
+                        }
+                      }}
                       viewport={{ once: true }}
                       className="relative w-7 h-7 flex items-center justify-center"
                     >
-                      {idx % 2 === 0 ? (
-                        <LuPencil className="w-6 h-6 text-purple-500 rotate-45" />
-                      ) : (
-                        <FaReact className="w-6 h-6 text-purple-500" />
-                      )}
+                      {React.createElement(icons[idx % icons.length], {
+                        className: "w-6 h-6 text-purple-500"
+                      })}
                     </motion.div>
                   </div>
                 </div>
@@ -150,7 +156,7 @@ export default function Experience() {
                         <span>{experience.location}</span>
                       </div>
 
-                      <p  style={{ fontSize: '14px' }} className="text-neutral-700  dark:text-neutral-300 mb-4 leading-relaxed">
+                      <p style={{ fontSize: '14px' }} className="text-neutral-700 dark:text-neutral-300 mb-4 leading-relaxed">
                         {experience.description}
                       </p>
 
