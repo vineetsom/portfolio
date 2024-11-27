@@ -10,26 +10,28 @@ const spaceGrotesk = Space_Grotesk({ subsets: ['latin'] });
 const Parallax = () => {
   const ref = useRef(null);
   const [isMobile, setIsMobile] = useState(false);
-  const [viewportHeight, setViewportHeight] = useState('100vh');
 
   useEffect(() => {
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768);
     };
     
-    const updateViewportHeight = () => {
-      setViewportHeight(`${window.innerHeight}px`);
+    checkMobile();
+    
+    const handleResize = () => {
+      checkMobile();
+      // Force a re-render when orientation changes
+      if ('orientation' in window) {
+        window.dispatchEvent(new Event('resize'));
+      }
     };
     
-    checkMobile();
-    updateViewportHeight();
-    
-    window.addEventListener('resize', checkMobile);
-    window.addEventListener('resize', updateViewportHeight);
+    window.addEventListener('resize', handleResize);
+    window.addEventListener('orientationchange', handleResize);
     
     return () => {
-      window.removeEventListener('resize', checkMobile);
-      window.removeEventListener('resize', updateViewportHeight);
+      window.removeEventListener('resize', handleResize);
+      window.removeEventListener('orientationchange', handleResize);
     };
   }, []);
 
@@ -51,8 +53,11 @@ const Parallax = () => {
   return (
     <div
       ref={ref}
-      className="w-full relative overflow-hidden"
-      style={{ height: viewportHeight }}
+      className="w-full relative overflow-hidden min-h-screen-dynamic"
+      style={{
+        height: 'calc(var(--vh, 1vh) * 100)',
+        minHeight: '-webkit-fill-available'
+      }}
     >
       {/* Peach morning sky gradient */}
       <motion.div 
@@ -92,8 +97,8 @@ const Parallax = () => {
         style={{ y: sunY }}
       >
         <div className="relative">
-          <div className="w-24 sm:w-48 h-24 sm:h-48 rounded-full bg-[#FFD700] absolute -top-12 sm:-top-24 -left-12 sm:-left-24 blur-3xl opacity-20" />
-          <div className="w-24 sm:w-48 h-24 sm:h-48 rounded-full bg-gradient-to-b from-[#FFD700] to-[#FFA500] relative">
+          <div className="w-20 sm:w-48 h-20 sm:h-48 rounded-full bg-[#FFD700] absolute -top-10 sm:-top-24 -left-10 sm:-left-24 blur-3xl opacity-20" />
+          <div className="w-20 sm:w-48 h-20 sm:h-48 rounded-full bg-gradient-to-b from-[#FFD700] to-[#FFA500] relative">
             <div className="absolute inset-0 rounded-full bg-gradient-to-t from-transparent to-[rgba(255,255,255,0.2)]" />
           </div>
         </div>
@@ -106,9 +111,9 @@ const Parallax = () => {
       >
         <svg
           viewBox="0 0 1440 320"
-          className="w-full h-[25vh] sm:h-auto"
+          className="w-full h-[30vh] sm:h-auto"
           preserveAspectRatio="none"
-          style={{ minHeight: '150px' }}
+          style={{ minHeight: '180px' }}
         >
           <path
             fill="#2c1b4d"
@@ -124,9 +129,9 @@ const Parallax = () => {
       >
         <svg
           viewBox="0 0 1440 320"
-          className="w-full h-[25vh] sm:h-auto"
+          className="w-full h-[30vh] sm:h-auto"
           preserveAspectRatio="none"
-          style={{ minHeight: '150px' }}
+          style={{ minHeight: '180px' }}
         >
           <path
             fill="#1a0f2e"
@@ -138,7 +143,7 @@ const Parallax = () => {
       {/* Text content */}
       <motion.div
         style={{ opacity: useTransform(scrollYProgress, [0, 0.04], [1, 0]) }}
-        className="absolute top-[15%] sm:top-1/4 left-1/2 -translate-x-1/2 text-center z-10 w-full px-4 sm:px-0"
+        className="absolute top-[12%] sm:top-1/4 left-1/2 -translate-x-1/2 text-center z-10 w-full px-4 sm:px-0"
       >
         <p className={`${spaceGrotesk.className} text-[10px] xs:text-xs sm:text-sm md:text-lg text-white/80 mb-2 mx-auto tracking-wide font-light`}>
           From logic to Legos, I build solutions with precision.
@@ -175,7 +180,7 @@ const Parallax = () => {
 
       {/* Scroll Indicator */}
       <motion.div
-        className="absolute bottom-8 sm:bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 sm:gap-2"
+        className="absolute bottom-6 sm:bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 sm:gap-2"
         animate={{ y: [0, 10, 0] }}
         transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
       >

@@ -5,12 +5,57 @@
 :root {
   --background: #ffffff;
   --foreground: #000000;
+  --vh: 100%;
 }
 
 .dark {
   --background: #000000;
   --foreground: #ffffff;
 }
+
+/* Mobile viewport height fix */
+@supports (-webkit-touch-callout: none) {
+  .h-screen {
+    height: -webkit-fill-available;
+  }
+  
+  .min-h-screen {
+    min-height: -webkit-fill-available;
+  }
+  
+  .max-h-screen {
+    max-height: -webkit-fill-available;
+  }
+}
+
+/* Fix for mobile Chrome
+html, body {
+  height: 100%;
+  height: -webkit-fill-available;
+  height: stretch;
+  overflow-x: hidden;
+}
+
+body {
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+  min-height: stretch;
+}
+
+/* Custom viewport height utilities */
+/* .h-screen-dynamic {
+  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
+  height: -webkit-fill-available;
+  height: stretch;
+}
+
+.min-h-screen-dynamic {
+  min-height: 100vh;
+  min-height: calc(var(--vh, 1vh) * 100);
+  min-height: -webkit-fill-available;
+  min-height: stretch;
+} */ 
 
 /* Enhanced dot pattern with better visibility */
 .bg-dot-pattern {
@@ -66,11 +111,26 @@
   .text-balance {
     text-wrap: balance;
   }
+  /* Custom viewport height utilities */
+ .h-screen-dynamic {
+      height: 100vh; /* Fallback */
+      height: calc(var(--vh, 1vh) * 100);
+    }
+    
+    .min-h-screen-dynamic {
+      min-height: 100vh; /* Fallback */
+      min-height: calc(var(--vh, 1vh) * 100);
+    }
 }
 
 /* Smooth scrolling */
 html {
   scroll-behavior: smooth;
+  height: -webkit-fill-available;
+}
+body {
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
 }
 
 /* Custom scrollbar */
@@ -99,3 +159,18 @@ html {
 .dark ::-webkit-scrollbar-thumb:hover {
   background: rgba(75, 85, 99, 0.7);
 }
+
+/* Fix for iOS Safari
+@supports (-webkit-touch-callout: none) {
+  .ios-height-fix {
+    height: -webkit-fill-available;
+  }
+}
+
+/* Fix for mobile Chrome address bar */
+/* @media screen and (max-height: 600px) {
+  .h-screen-dynamic,
+  .min-h-screen-dynamic {
+    min-height: 600px;
+  }
+} */
