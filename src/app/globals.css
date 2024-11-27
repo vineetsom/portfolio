@@ -30,6 +30,9 @@
 /* body {
   outline: 2px solid red;
 } */
+body {
+  overflow-x: hidden;
+}
 
 /* Fix for mobile Chrome
 html, body {
