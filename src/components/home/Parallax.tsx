@@ -10,16 +10,27 @@ const spaceGrotesk = Space_Grotesk({ subsets: ['latin'] });
 const Parallax = () => {
   const ref = useRef(null);
   const [isMobile, setIsMobile] = useState(false);
+  const [viewportHeight, setViewportHeight] = useState('100vh');
 
   useEffect(() => {
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768);
     };
     
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
+    const updateViewportHeight = () => {
+      setViewportHeight(`${window.innerHeight}px`);
+    };
     
-    return () => window.removeEventListener('resize', checkMobile);
+    checkMobile();
+    updateViewportHeight();
+    
+    window.addEventListener('resize', checkMobile);
+    window.addEventListener('resize', updateViewportHeight);
+    
+    return () => {
+      window.removeEventListener('resize', checkMobile);
+      window.removeEventListener('resize', updateViewportHeight);
+    };
   }, []);
 
   const { scrollYProgress } = useScroll({
@@ -29,18 +40,19 @@ const Parallax = () => {
 
   const sunY = useTransform(scrollYProgress, 
     [0, 0.4], 
-    isMobile ? ["200%", "40%"] : ["330%", "50%"]
+    isMobile ? ["400%", "30%"] : ["330%", "50%"]
   );
   
   const mountainY = useTransform(scrollYProgress, 
     [0, 1], 
-    isMobile ? ["0%", "10%"] : ["0%", "20%"]
+    isMobile ? ["0%", "5%"] : ["0%", "20%"]
   );
 
   return (
     <div
       ref={ref}
-      className="w-full h-[100svh] relative overflow-hidden"
+      className="w-full relative overflow-hidden"
+      style={{ height: viewportHeight }}
     >
       {/* Peach morning sky gradient */}
       <motion.div 
@@ -80,8 +92,8 @@ const Parallax = () => {
         style={{ y: sunY }}
       >
         <div className="relative">
-          <div className="w-32 sm:w-48 h-32 sm:h-48 rounded-full bg-[#FFD700] absolute -top-16 sm:-top-24 -left-16 sm:-left-24 blur-3xl opacity-20" />
-          <div className="w-32 sm:w-48 h-32 sm:h-48 rounded-full bg-gradient-to-b from-[#FFD700] to-[#FFA500] relative">
+          <div className="w-24 sm:w-48 h-24 sm:h-48 rounded-full bg-[#FFD700] absolute -top-12 sm:-top-24 -left-12 sm:-left-24 blur-3xl opacity-20" />
+          <div className="w-24 sm:w-48 h-24 sm:h-48 rounded-full bg-gradient-to-b from-[#FFD700] to-[#FFA500] relative">
             <div className="absolute inset-0 rounded-full bg-gradient-to-t from-transparent to-[rgba(255,255,255,0.2)]" />
           </div>
         </div>
@@ -89,13 +101,14 @@ const Parallax = () => {
 
       {/* Mountains */}
       <motion.div
-        className="absolute bottom-0 w-full"
+        className="absolute -bottom-1 w-full"
         style={{ y: mountainY }}
       >
         <svg
           viewBox="0 0 1440 320"
-          className="w-full h-auto"
+          className="w-full h-[25vh] sm:h-auto"
           preserveAspectRatio="none"
+          style={{ minHeight: '150px' }}
         >
           <path
             fill="#2c1b4d"
@@ -106,13 +119,14 @@ const Parallax = () => {
 
       {/* Mountains - Front Layer */}
       <motion.div
-        className="absolute bottom-0 w-full"
+        className="absolute -bottom-1 w-full"
         style={{ y: useTransform(mountainY, y => `${parseFloat(y as string) + (isMobile ? 2 : 5)}%`) }}
       >
         <svg
           viewBox="0 0 1440 320"
-          className="w-full h-auto"
+          className="w-full h-[25vh] sm:h-auto"
           preserveAspectRatio="none"
+          style={{ minHeight: '150px' }}
         >
           <path
             fill="#1a0f2e"
@@ -135,14 +149,14 @@ const Parallax = () => {
         <p className={`${playfair.className} text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl text-white/90 mb-4 sm:mb-8 font-light tracking-widest`}>
           Software Developer
         </p>
-        <div className="flex justify-center gap-3 sm:gap-4">
+        <div className="flex justify-center gap-6">
           <motion.a
             href="https://github.com/devika7300"
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
-            className="p-2 sm:p-3 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
+            className="p-2.5 sm:p-3 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
           >
             <FaGithub className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
           </motion.a>
@@ -152,7 +166,7 @@ const Parallax = () => {
             rel="noopener noreferrer"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
-            className="p-2 sm:p-3 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
+            className="p-2.5 sm:p-3 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
           >
             <FaLinkedin className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
           </motion.a>
@@ -161,7 +175,7 @@ const Parallax = () => {
 
       {/* Scroll Indicator */}
       <motion.div
-        className="absolute bottom-6 sm:bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 sm:gap-2"
+        className="absolute bottom-8 sm:bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 sm:gap-2"
         animate={{ y: [0, 10, 0] }}
         transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
       >
