@@ -18,15 +18,18 @@
   .h-screen {
     height: -webkit-fill-available;
   }
-  
+
   .min-h-screen {
     min-height: -webkit-fill-available;
   }
-  
+
   .max-h-screen {
     max-height: -webkit-fill-available;
   }
 }
+/* body {
+  outline: 2px solid red;
+} */
 
 /* Fix for mobile Chrome
 html, body {
@@ -55,7 +58,7 @@ body {
   min-height: calc(var(--vh, 1vh) * 100);
   min-height: -webkit-fill-available;
   min-height: stretch;
-} */ 
+} */
 
 /* Enhanced dot pattern with better visibility */
 .bg-dot-pattern {
@@ -112,15 +115,15 @@ body {
     text-wrap: balance;
   }
   /* Custom viewport height utilities */
- .h-screen-dynamic {
-      height: 100vh; /* Fallback */
-      height: calc(var(--vh, 1vh) * 100);
-    }
-    
-    .min-h-screen-dynamic {
-      min-height: 100vh; /* Fallback */
-      min-height: calc(var(--vh, 1vh) * 100);
-    }
+  .h-screen-dynamic {
+    height: 100vh; /* Fallback */
+    height: calc(var(--vh, 1vh) * 100);
+  }
+
+  .min-h-screen-dynamic {
+    min-height: 100vh; /* Fallback */
+    min-height: calc(var(--vh, 1vh) * 100);
+  }
 }
 
 /* Smooth scrolling */
@@ -129,8 +132,8 @@ html {
   height: -webkit-fill-available;
 }
 body {
-    min-height: 100vh;
-    min-height: -webkit-fill-available;
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
 }
 
 /* Custom scrollbar */
