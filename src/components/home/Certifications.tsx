@@ -9,7 +9,7 @@ const certifications = [
     title: "Core Java Programming Course",
     subtitle: "Rooman Technologies",
     date: "Aug 2020",
-    link: "https://www.credly.com/badges/example"
+    link: "https://www.linkedin.com/in/devika-shendkar/details/certifications/1706639397962/single-media-viewer/?profileId=ACoAAC3gUkoB0KAkIkd9-g8wEOW2BdP8zE-zVyk"
   },
   {
     title: "REST APIs with Spring and Java Skill Path",

@@ -3,9 +3,7 @@
 import Image from "next/image";
 import React from "react";
 import { motion } from "framer-motion";
-import { cn } from "../../utils/cn";
 import { CardBody, CardContainer, CardItem } from "../ui/3d-card";
-import Link from "next/link";
 import { projects } from "../../lib/metadata";
 import { IconType } from "react-icons";
 import imageLoader from "../../lib/imageLoader";
@@ -39,9 +37,13 @@ const itemVariants = {
   show: { opacity: 1, y: 0 },
 };
 
-export function AllProjects() {
+export function AllProjects(): JSX.Element {
+  const handleProjectClick = (link: string): void => {
+    window.open(link, '_blank', 'noopener,noreferrer');
+  };
+
   return (
-    <section id="projects" className="py-24 bg-white">
+    <div className="py-24 bg-white" id="projects">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -68,7 +70,8 @@ export function AllProjects() {
             <motion.div 
               key={project.id} 
               variants={itemVariants}
-              className="w-full"
+              className="w-full cursor-pointer"
+              onClick={() => handleProjectClick(project.link)}
             >
               <CardContainer>
                 <CardBody className="relative w-full h-[420px] bg-white rounded-xl p-4 border border-zinc-200 flex flex-col group/card hover:border-purple-500/50 transition-colors">
@@ -101,16 +104,11 @@ export function AllProjects() {
                     </div>
                   </CardItem>
                   <div className="flex justify-between items-center mt-8">
-                    <CardItem
-                      translateZ="30"
-                      as={Link}
-                      href={project.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                    <div
                       className="relative px-4 py-1.5 rounded-full text-xs font-medium bg-gradient-to-r from-neutral-900 to-neutral-700 text-white shadow-[0_0_15px_rgba(168,85,247,0.35)] before:absolute before:inset-0 before:rounded-full before:p-[1px] before:bg-gradient-to-r before:from-violet-500 before:via-purple-500 before:to-violet-400 before:opacity-100 hover:scale-105 transition-transform"
-                   >
+                    >
                       <span className="relative z-10">View Project →</span>
-                    </CardItem>
+                    </div>
 
                     <CardItem
                       translateZ="30"
@@ -135,7 +133,6 @@ export function AllProjects() {
           ))}
         </motion.div>
 
-        {/* View More Projects Button */}
         <motion.div 
           className="flex justify-center mt-12"
           initial={{ opacity: 0, y: 20 }}
@@ -143,21 +140,21 @@ export function AllProjects() {
           viewport={{ once: true }}
           transition={{ delay: 0.5 }}
         >
-          <motion.a
+          <a
             href="https://github.com/devika7300"
+            target="_blank"
+            rel="noopener noreferrer"
             className="group relative px-5 py-2 rounded-full text-sm font-medium bg-gradient-to-r from-neutral-900 to-neutral-700 text-white opacity-90 hover:opacity-100 transition-all duration-300 shadow-[0_0_15px_rgba(168,85,247,0.35)] hover:shadow-[0_0_25px_rgba(168,85,247,0.45)] border border-purple-500/50 hover:scale-105"
           >
             <span className="relative z-10 flex items-center">
               View More Projects
-              <motion.span
-                className="inline-block ml-1 transition-transform duration-300 group-hover:translate-x-1"
-              >
+              <span className="inline-block ml-1 transition-transform duration-300 group-hover:translate-x-1">
                 →
-              </motion.span>
+              </span>
             </span>
-          </motion.a>
+          </a>
         </motion.div>
       </div>
-    </section>
+    </div>
   );
 }
