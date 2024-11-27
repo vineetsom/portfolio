@@ -10,6 +10,11 @@ Visit the live portfolio at: [https://devika7300.github.io/portfolio/](https://d
 
 - 📱 Fully responsive design
 - 🎨 Modern UI with smooth animations
+- 🌓 Light/Dark mode with unique features:
+  - Seamless theme switching with persistent preference
+  - Custom magical cursor with spotlight effect (dark mode)
+  - Theme-specific UI elements and animations
+  - Moonrise parallax effect in dark mode
 - ⚡ Fast performance
 - 🎯 SEO optimized
 - 🧩 Modular and maintainable code structure
@@ -20,6 +25,7 @@ Visit the live portfolio at: [https://devika7300.github.io/portfolio/](https://d
 - **Language:** TypeScript
 - **Styling:** Tailwind CSS
 - **Animation:** Framer Motion
+- **Theme:** next-themes
 - **Deployment:** GitHub Pages
 - **Version Control:** Git & GitHub
 
