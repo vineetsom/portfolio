@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
-import { FaReact, FaAws } from "react-icons/fa";
-import { SiSpringboot, SiMysql } from "react-icons/si";
+import { FaReact, FaAws, FaMoneyCheckAlt, FaExchangeAlt } from "react-icons/fa";
+import { FaJava } from 'react-icons/fa6';
+import { SiSpringboot, SiMysql, SiTypescript, SiNextdotjs, SiChartdotjs, SiTailwindcss, SiAppwrite, SiNodedotjs, SiExpress, SiPostgresql, SiPrisma, SiSpring, SiPostman, SiHibernate, SiGithub } from "react-icons/si";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
 
@@ -8,7 +9,7 @@ export const siteMetadata = {
   title: 'Devika Shendkar - Portfolio',
   description: 'Professional portfolio showcasing full-stack development projects and skills',
   author: 'Devika Shendkar',
-  siteUrl: 'https://devika7300.github.io',
+  siteUrl: 'https://devika7300.github.io/portfolio/',
   twitterHandle: '@devika',
 };
 
@@ -82,47 +83,57 @@ export const experiences = [
 export const projects = [
   {
     id: 1,
-    title: "3D Solar System Planets to Explore",
-    des: "Explore the wonders of our solar system with this captivating 3D simulation of the planets using Three.js.",
-    img: "images/projects/project1.png",
+    title: "TrustVault - Online Banking Platform",
+    des: "An online banking platform that features secure account management, efficient fund transfers, and a real-time dashboard to enhance user decision-making across various devices.",
+    img: "images/projects/project1.jpg",
     icons: [
-      { icon: FaReact, color: "#61DAFB" },
-      { icon: SiMysql, color: "#00758F" },
-      { icon: SiSpringboot, color: "#6DB33F" },
-      { icon: FaAws, color: "#FF9900" }
+      { icon: SiTypescript, color: "#3178C6" },  // TypeScript
+      { icon: SiNextdotjs, color: "#000000" },  // Next.js
+      { icon: SiChartdotjs, color: "#FF6384" },  // Chart.js
+      { icon: SiTailwindcss, color: "#38B2AC" },  // Tailwind CSS
+      { icon: FaMoneyCheckAlt, color: "#00FF94" },  // Plaid (Color is assumed as no official color is widely recognized)
+      { icon: SiAppwrite, color: "#F02E65" },  // Appwrite
+      { icon: FaExchangeAlt, color: "#FF7400" }  // Dwolla (Color is assumed as no official color is widely recognized)
     ],
-    link: "https://github.com/devika7300/Shift-management",
+    link: "https://github.com/devika7300/trustvault-app",
   },
   {
     id: 2,
-    title: "Yoom - Video Conferencing App",
-    des: "Simplify your video conferencing experience with Yoom. Seamlessly connect with colleagues and friends.",
+    title: "TaskTrail - Project Management Application",
+    des: "Developed a project management dashboard that supports light/dark mode, task tracking, assignment, and timeline management, enhancing collaboration and data integrity.",
     img: "images/projects/project2.png",
     icons: [
-      { icon: FaReact, color: "#61DAFB" },
-      { icon: SiMysql, color: "#00758F" },
-      { icon: SiSpringboot, color: "#6DB33F" },
-      { icon: FaAws, color: "#FF9900" }
+      { icon: SiNextdotjs, color: "#000000" },  // Next.js
+      { icon: SiTypescript, color: "#3178C6" },  // TypeScript
+      { icon: SiNodedotjs, color: "#339933" },  // Node.js
+      { icon: SiExpress, color: "#000000" },  // Express.js (No official color, commonly represented in black)
+      { icon: FaAws, color: "#FF9900" },  // Amazon Web Services (AWS)
+      { icon: SiTailwindcss, color: "#38B2AC" },  // Tailwind CSS
+      { icon: SiPostgresql, color: "#336791" },  // PostgreSQL
     ],
-    link: "https://github.com/devika7300",
+    
+    link: "https://github.com/devika7300/project-management-tasktrail-app",
   },
   {
     id: 3,
-    title: "AI Image SaaS - Canva Application",
-    des: "A REAL Software-as-a-Service app with AI features and a payments and credits system using the latest tech stack.",
+    title: "E-commerce Backend Application",
+    des: " E-commerce app with functionalities such as product listings, categories, order processing, shopping carts, and user profiles which supports smooth scalability as business needs grow.",
     img: "images/projects/project3.png",
     icons: [
-      { icon: FaReact, color: "#61DAFB" },
-      { icon: SiMysql, color: "#00758F" },
-      { icon: SiSpringboot, color: "#6DB33F" },
-      { icon: FaAws, color: "#FF9900" }
+      { icon: SiSpring, color: "#6DB33F" },  // Spring Boot
+      { icon: FaJava, color: "#007396" },  // Java
+      { icon: SiPostman, color: "#FF6C37" },  // Postman
+      { icon: SiPostgresql, color: "#336791" },  // PostgreSQL
+      { icon: SiHibernate, color: "#59666C" },  // Hibernate (Assumed color, as no official color is widely recognized)
+      { icon: SiGithub, color: "#181717" }  // GitHub
     ],
-    link: "https://github.com/devika7300",
+    
+    link: "https://github.com/devika7300/Spring-boot-ecommerce-app",
   },
   {
     id: 4,
-    title: "Animated Apple Iphone 3D Website",
-    des: "Recreated the Apple iPhone 15 Pro website, combining GSAP animations and Three.js 3D effects.",
+    title: "Green Guardian - Automated Plant Care System",
+    des: "Developed an IoT-based automated plant care system that monitors soil moisture and temperature, triggering automated watering.",
     img: "images/projects/project2.png",
     icons: [
       { icon: FaReact, color: "#61DAFB" },

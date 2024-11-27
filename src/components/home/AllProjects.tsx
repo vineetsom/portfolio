@@ -42,7 +42,7 @@ const itemVariants = {
 export function AllProjects() {
   return (
     <section id="projects" className="py-24 bg-white">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -53,7 +53,7 @@ export function AllProjects() {
             Featured Projects
           </h2>
           <p className="text-neutral-600 max-w-2xl mx-auto">
-            A showcase of my recent work, featuring web applications built with modern technologies.
+            A showcase of my recent work, featuring applications built with modern technologies.
           </p>
         </motion.div>
 
@@ -74,14 +74,14 @@ export function AllProjects() {
                 <CardBody className="relative w-full h-[420px] bg-white rounded-xl p-4 border border-zinc-200 flex flex-col group/card hover:border-purple-500/50 transition-colors">
                   <CardItem
                     translateZ="30"
-                    className="text-lg font-semibold text-neutral-900 mb-1.5 h-[56px] line-clamp-2"
+                    className="text-lg font-semibold text-neutral-900 mb-1.5 h-[62px] line-clamp-2"
                   >
                     {project.title}
                   </CardItem>
                   <CardItem
                     as="p"
                     translateZ="30"
-                    className="text-neutral-500 text-xs mb-3 h-[40px] line-clamp-2 leading-relaxed"
+                    className="text-neutral-500 text-xs mb-4 h-[90px] line-clamp-4 leading-relaxed"
                   >
                     {project.des}
                   </CardItem>
@@ -100,7 +100,7 @@ export function AllProjects() {
                       />
                     </div>
                   </CardItem>
-                  <div className="flex justify-between items-center mt-auto">
+                  <div className="flex justify-between items-center mt-8">
                     <CardItem
                       translateZ="30"
                       as={Link}

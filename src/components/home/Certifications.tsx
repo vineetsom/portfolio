@@ -27,13 +27,13 @@ const certifications = [
     title: "Complete Web Developer Course",
     subtitle: "Udemy",
     date: "May 2020",
-    link: "https://www.credential.net/example"
+    link: "https://www.linkedin.com/in/devika-shendkar/details/certifications/1706639574181/single-media-viewer/?profileId=ACoAAC3gUkoB0KAkIkd9-g8wEOW2BdP8zE-zVyk"
   },
   {
-    title: "Winner Smart India Hackathon 2019",
+    title: "Winner - Smart India Hackathon 2019",
     subtitle: "Govt Of India",
     date: "Mar 2019",
-    link: "https://credentials.databricks.com/example"
+    link: "https://www.linkedin.com/in/devika-shendkar/details/certifications/1706639458616/single-media-viewer/?profileId=ACoAAC3gUkoB0KAkIkd9-g8wEOW2BdP8zE-zVyk"
   },
 ];
 export default function Certifications() {

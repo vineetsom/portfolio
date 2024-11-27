@@ -5,7 +5,6 @@ import { FaJava, FaJs, FaPython, FaHtml5, FaCss3Alt, FaReact, FaNodeJs, FaAngula
 import { SiTypescript, SiCplusplus, SiSpringboot, SiNextdotjs, SiExpress, SiTailwindcss, SiMysql, SiMongodb, SiPostgresql, SiFirebase, SiGooglecloud, SiKubernetes, SiJenkins, SiPostman } from "react-icons/si";
 import { TbApi } from "react-icons/tb";
 
-
 const skills = {
   row1: [
     { title: "HTML", icon: FaHtml5, color: "#E34F26" },
@@ -44,6 +43,7 @@ const skills = {
     { title: "Jenkins", icon: SiJenkins, color: "#D24939" },
   ],
 };
+
 export const SkillsParallax = () => {
   const ref = React.useRef(null);
   const { scrollYProgress } = useScroll({
@@ -172,15 +172,31 @@ const SkillCard = ({
       style={{
         x: translate,
       }}
-      className="group/skill relative h-24 w-24 md:h-40 md:w-40 rounded-xl border border-neutral-200 dark:border-white/[0.1] bg-neutral-100 dark:bg-neutral-900 p-2 md:p-3"
+      className="group/skill relative h-24 w-24 md:h-40 md:w-40 rounded-2xl bg-white/5 dark:bg-white/[0.02] border border-neutral-200 dark:border-white/[0.08] hover:border-neutral-300 dark:hover:border-white/[0.15] transition-colors duration-500"
     >
-      <div className="relative h-full w-full rounded-xl">
-        <div className="absolute inset-0 flex items-center justify-center">
-          <Icon className="w-10 h-10 md:w-16 md:h-16 text-neutral-600 dark:text-neutral-200 group-hover/skill:scale-105 transition-transform duration-500" 
-          style={{ color: color }}/>
-        </div>
-        <div className="absolute bottom-0 left-0 w-full p-1 md:p-2">
-          <h2 className="text-xs md:text-sm font-bold text-neutral-800 dark:text-white text-center">
+      <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-neutral-50 dark:from-neutral-900/50 to-neutral-100/50 dark:to-neutral-800/50" />
+      
+      <div className="relative h-full w-full p-2 md:p-4 flex flex-col items-center justify-center">
+        <motion.div
+          whileHover={{ 
+            scale: 1.1,
+            rotate: [0, -5, 5, -5, 0],
+            transition: { duration: 0.5 }
+          }}
+          className="relative"
+        >
+          <Icon 
+            className="w-10 h-10 md:w-16 md:h-16 transition-transform duration-300" 
+            style={{ color }}
+          />
+          <div 
+            className="absolute inset-0 blur-lg opacity-25 transition-opacity duration-300 group-hover/skill:opacity-40"
+            style={{ backgroundColor: color }}
+          />
+        </motion.div>
+        
+        <div className="mt-3 md:mt-4">
+          <h2 className="text-xs md:text-sm font-medium text-neutral-700 dark:text-neutral-300 text-center transition-colors duration-300 group-hover/skill:text-neutral-900 dark:group-hover/skill:text-white">
             {title}
           </h2>
         </div>
