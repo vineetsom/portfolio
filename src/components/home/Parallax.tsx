@@ -1,6 +1,6 @@
 "use client";
 import { useScroll, useTransform, motion } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useEffect, useState } from "react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { Playfair_Display, Space_Grotesk } from 'next/font/google';
 
@@ -9,24 +9,38 @@ const spaceGrotesk = Space_Grotesk({ subsets: ['latin'] });
 
 const Parallax = () => {
   const ref = useRef(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start start", "end start"],
   });
 
-  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
-  const translateYValue = isMobile ? -300 : -700;
-
   const sunY = useTransform(scrollYProgress, 
     [0, 0.4], 
-    isMobile ? ["260%", "50%"] : ["330%", "50%"]
+    isMobile ? ["200%", "40%"] : ["330%", "50%"]
   );
-  const mountainY = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
+  
+  const mountainY = useTransform(scrollYProgress, 
+    [0, 1], 
+    isMobile ? ["0%", "10%"] : ["0%", "20%"]
+  );
 
   return (
     <div
       ref={ref}
-      className="w-full h-screen relative overflow-hidden"
+      className="w-full h-[100svh] relative overflow-hidden"
     >
       {/* Peach morning sky gradient */}
       <motion.div 
@@ -48,13 +62,13 @@ const Parallax = () => {
         className="absolute inset-0"
         style={{ opacity: useTransform(scrollYProgress, [0, 0.04], [1, 0]) }}
       >
-        {Array.from({ length: 20 }).map((_, i) => (
+        {Array.from({ length: isMobile ? 12 : 20 }).map((_, i) => (
           <div
             key={i}
             className="absolute w-1 h-1 bg-white/40 rounded-full"
             style={{
               left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 20}%`,
+              top: `${Math.random() * (isMobile ? 15 : 20)}%`,
             }}
           />
         ))}
@@ -66,8 +80,8 @@ const Parallax = () => {
         style={{ y: sunY }}
       >
         <div className="relative">
-          <div className="w-48 h-48 rounded-full bg-[#FFD700] absolute -top-24 -left-24 blur-3xl opacity-20" />
-          <div className="w-48 h-48 rounded-full bg-gradient-to-b from-[#FFD700] to-[#FFA500] relative">
+          <div className="w-32 sm:w-48 h-32 sm:h-48 rounded-full bg-[#FFD700] absolute -top-16 sm:-top-24 -left-16 sm:-left-24 blur-3xl opacity-20" />
+          <div className="w-32 sm:w-48 h-32 sm:h-48 rounded-full bg-gradient-to-b from-[#FFD700] to-[#FFA500] relative">
             <div className="absolute inset-0 rounded-full bg-gradient-to-t from-transparent to-[rgba(255,255,255,0.2)]" />
           </div>
         </div>
@@ -80,7 +94,7 @@ const Parallax = () => {
       >
         <svg
           viewBox="0 0 1440 320"
-          className="w-full"
+          className="w-full h-auto"
           preserveAspectRatio="none"
         >
           <path
@@ -93,11 +107,11 @@ const Parallax = () => {
       {/* Mountains - Front Layer */}
       <motion.div
         className="absolute bottom-0 w-full"
-        style={{ y: useTransform(mountainY, y => `${parseFloat(y as string) + 5}%`) }}
+        style={{ y: useTransform(mountainY, y => `${parseFloat(y as string) + (isMobile ? 2 : 5)}%`) }}
       >
         <svg
           viewBox="0 0 1440 320"
-          className="w-full"
+          className="w-full h-auto"
           preserveAspectRatio="none"
         >
           <path
@@ -110,27 +124,27 @@ const Parallax = () => {
       {/* Text content */}
       <motion.div
         style={{ opacity: useTransform(scrollYProgress, [0, 0.04], [1, 0]) }}
-        className="absolute top-1/4 left-1/2 -translate-x-1/2 text-center z-10"
+        className="absolute top-[15%] sm:top-1/4 left-1/2 -translate-x-1/2 text-center z-10 w-full px-4 sm:px-0"
       >
-        <p className={`${spaceGrotesk.className} text-xs md:text-lg text-white/80 mb-2 max-w-md mx-auto tracking-wide font-light whitespace-nowrap`}>
+        <p className={`${spaceGrotesk.className} text-[10px] xs:text-xs sm:text-sm md:text-lg text-white/80 mb-2 mx-auto tracking-wide font-light`}>
           From logic to Legos, I build solutions with precision.
         </p>
-        <h1 className={`${playfair.className} text-2xl md:text-8xl font-bold text-white mb-4 tracking-wider whitespace-nowrap`}>
+        <h1 className={`${playfair.className} text-xl xs:text-2xl sm:text-4xl md:text-6xl lg:text-8xl font-bold text-white mb-2 sm:mb-4 tracking-wider`}>
           Devika Shendkar
         </h1>
-        <p className={`${playfair.className} text-xl sm:text-2xl md:text-3xl lg:text-4xl text-white/90 mb-8 font-light tracking-widest`}>
+        <p className={`${playfair.className} text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl text-white/90 mb-4 sm:mb-8 font-light tracking-widest`}>
           Software Developer
         </p>
-        <div className="flex justify-center gap-4">
+        <div className="flex justify-center gap-3 sm:gap-4">
           <motion.a
             href="https://github.com/devika7300"
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
-            className="p-3 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
+            className="p-2 sm:p-3 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
           >
-            <FaGithub className="w-6 h-6 text-white" />
+            <FaGithub className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
           </motion.a>
           <motion.a
             href="https://www.linkedin.com/in/devika-shendkar/"
@@ -138,27 +152,29 @@ const Parallax = () => {
             rel="noopener noreferrer"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
-            className="p-3 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
+            className="p-2 sm:p-3 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
           >
-            <FaLinkedin className="w-6 h-6 text-white" />
+            <FaLinkedin className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
           </motion.a>
         </div>
       </motion.div>
 
       {/* Scroll Indicator */}
       <motion.div
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+        className="absolute bottom-6 sm:bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 sm:gap-2"
         animate={{ y: [0, 10, 0] }}
         transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
       >
-        <div className="w-4 h-8 rounded-full border-2 border-white/50 flex justify-center pt-2">
+        <div className="w-3 h-6 sm:w-4 sm:h-8 rounded-full border-2 border-white/50 flex justify-center pt-1.5 sm:pt-2">
           <motion.div
-            className="w-1 h-2 bg-white/50 rounded-full"
-            animate={{ y: [0, 12, 0] }}
+            className="w-0.5 sm:w-1 h-1.5 sm:h-2 bg-white/50 rounded-full"
+            animate={{ y: [0, 8, 0] }}
             transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
           />
         </div>
-        <span className={`${spaceGrotesk.className} text-white/40 mb-6 text-sm uppercase tracking-widest`}>Scroll</span>
+        <span className={`${spaceGrotesk.className} text-white/40 mb-4 sm:mb-6 text-xs sm:text-sm uppercase tracking-widest`}>
+          Scroll
+        </span>
       </motion.div>
     </div>
   );
