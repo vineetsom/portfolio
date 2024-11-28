@@ -25,8 +25,8 @@ const skills = {
     { title: "Spring Boot", icon: SiSpringboot, color: "#6DB33F" },
   ],
   row3: [
-    { title: "GCP", icon: SiGooglecloud, color: "#4285F4" },
     { title: "Git", icon: FaGitAlt, color: "#F05032" },
+    { title: "GCP", icon: SiGooglecloud, color: "#4285F4" },
     { title: "AWS", icon: FaAws, color: "#FF9900" },
     { title: "Firebase", icon: SiFirebase, color: "#FFCA28" },
     { title: "MySQL", icon: SiMysql, color: "#4479A1" },
@@ -51,11 +51,22 @@ export const SkillsParallax = () => {
     offset: ["start start", "end start"],
   });
 
-  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
-  const translateYValue = isMobile ? -300 : -700;
+  const [isMobile, setIsMobile] = React.useState(false);
 
-  const translateX = useTransform(scrollYProgress, [0, 1], [0, 400]);
-  const translateXReverse = useTransform(scrollYProgress, [0, 1], [0, -400]);
+  React.useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  const translateYValue = isMobile ? -150 : -700;
+  const translateXValue = isMobile ? 200 : 400;
+
+  const translateX = useTransform(scrollYProgress, [0, 1], [0, translateXValue]);
+  const translateXReverse = useTransform(scrollYProgress, [0, 1], [0, -translateXValue]);
   const rotateX = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [15, 0, 0, 15]);
   const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0.6, 1, 1, 0.6]);
   const rotateZ = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [20, 0, 0, 20]);
@@ -64,92 +75,98 @@ export const SkillsParallax = () => {
   return (
     <div id="skills"
       ref={ref}
-      className="h-[120vh] md:h-[150vh] pb-20 overflow-hidden antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
+      className="h-[100vh] sm:h-[120vh] md:h-[150vh] pb-8 sm:pb-12 md:pb-20 overflow-hidden antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
     >
       <Header />
-      {/* Row 1 */}
-      <motion.div
-        style={{
-          rotateX,
-          rotateZ,
-          translateY,
-          opacity,
-        }}
-        className="flex flex-row-reverse space-x-reverse space-x-2 md:space-x-6 mb-4 md:mb-8 justify-center"
-      >
-        {skills.row1.map((skill) => (
-          <SkillCard
-            key={skill.title}
-            {...skill}
-            translate={translateX}
-          />
-        ))}
-      </motion.div>
-      {/* Row 2 */}
-      <motion.div
-        style={{
-          rotateX,
-          rotateZ,
-          translateY,
-          opacity,
-        }}
-        className="flex flex-row space-x-2 md:space-x-6 mb-4 md:mb-8 justify-center"
-      >
-        {skills.row2.map((skill) => (
-          <SkillCard
-            key={skill.title}
-            {...skill}
-            translate={translateXReverse}
-          />
-        ))}
-      </motion.div>
-      {/* Row 3 */}
-      <motion.div
-        style={{
-          rotateX,
-          rotateZ,
-          translateY,
-          opacity,
-        }}
-        className="flex flex-row-reverse space-x-reverse space-x-2 md:space-x-6 mb-4 md:mb-8 justify-center"
-      >
-        {skills.row3.map((skill) => (
-          <SkillCard
-            key={skill.title}
-            {...skill}
-            translate={translateX}
-          />
-        ))}
-      </motion.div>
-      {/* Row 4 */}
-      <motion.div
-        style={{
-          rotateX,
-          rotateZ,
-          translateY,
-          opacity,
-        }}
-        className="flex flex-row space-x-2 md:space-x-6 mb-4 md:mb-8 justify-center"
-      >
-        {skills.row4.map((skill) => (
-          <SkillCard
-            key={skill.title}
-            {...skill}
-            translate={translateXReverse}
-          />
-        ))}
-      </motion.div>
+      <div className="w-full overflow-hidden">
+        <div className="overflow-x-auto scrollbar-hide pl-8 md:pl-0">
+          <div className="w-max md:w-auto pr-8 md:pr-0">
+            {/* Row 1 */}
+            <motion.div
+              style={{
+                rotateX,
+                rotateZ,
+                translateY,
+                opacity,
+              }}
+              className="flex flex-row-reverse gap-4 sm:gap-4 md:gap-6 mb-3 sm:mb-4 md:mb-8 justify-start md:justify-center"
+            >
+              {skills.row1.map((skill) => (
+                <SkillCard
+                  key={skill.title}
+                  {...skill}
+                  translate={translateX}
+                />
+              ))}
+            </motion.div>
+            {/* Row 2 */}
+            <motion.div
+              style={{
+                rotateX,
+                rotateZ,
+                translateY,
+                opacity,
+              }}
+              className="flex flex-row gap-4 sm:gap-4 md:gap-6 mb-3 sm:mb-4 md:mb-8 justify-start md:justify-center"
+            >
+              {skills.row2.map((skill) => (
+                <SkillCard
+                  key={skill.title}
+                  {...skill}
+                  translate={translateXReverse}
+                />
+              ))}
+            </motion.div>
+            {/* Row 3 */}
+            <motion.div
+              style={{
+                rotateX,
+                rotateZ,
+                translateY,
+                opacity,
+              }}
+              className="flex flex-row-reverse gap-4 sm:gap-4 md:gap-6 mb-3 sm:mb-4 md:mb-8 justify-start md:justify-center"
+            >
+              {skills.row3.map((skill) => (
+                <SkillCard
+                  key={skill.title}
+                  {...skill}
+                  translate={translateX}
+                />
+              ))}
+            </motion.div>
+            {/* Row 4 */}
+            <motion.div
+              style={{
+                rotateX,
+                rotateZ,
+                translateY,
+                opacity,
+              }}
+              className="flex flex-row gap-4 sm:gap-4 md:gap-6 mb-3 sm:mb-4 md:mb-8 justify-start md:justify-center"
+            >
+              {skills.row4.map((skill) => (
+                <SkillCard
+                  key={skill.title}
+                  {...skill}
+                  translate={translateXReverse}
+                />
+              ))}
+            </motion.div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
 
 const Header = () => {
   return (
-    <div className="max-w-7xl z-20 relative mx-auto py-20 md:py-40 px-4 w-full left-0 top-0">
-      <h1 className="text-2xl md:text-7xl font-bold dark:text-white">
+    <div className="max-w-7xl z-20 relative mx-auto py-8 sm:py-12 md:py-20 lg:py-40 px-4 w-full left-0 top-0">
+      <h1 className="text-2xl sm:text-4xl md:text-6xl lg:text-7xl font-bold dark:text-white">
         My Skills
       </h1>
-      <p className="max-w-3xl text-base font-bold md:text-xl mt-8 dark:text-neutral-200">
+      <p className="max-w-3xl text-sm sm:text-base md:text-lg lg:text-xl mt-4 sm:mt-6 md:mt-8 dark:text-neutral-200">
         Here are some of the key technologies I work with
       </p>
     </div>
@@ -172,11 +189,11 @@ const SkillCard = ({
       style={{
         x: translate,
       }}
-      className="group/skill relative h-24 w-24 md:h-40 md:w-40 rounded-2xl bg-white/5 dark:bg-white/[0.02] border border-neutral-200 dark:border-white/[0.08] hover:border-neutral-300 dark:hover:border-white/[0.15] transition-colors duration-500"
+      className="group/skill relative h-16 w-16 sm:h-20 sm:w-20 md:h-32 md:w-32 lg:h-40 lg:w-40 rounded-xl sm:rounded-2xl bg-white/5 dark:bg-white/[0.02] border border-neutral-200 dark:border-white/[0.08] hover:border-neutral-300 dark:hover:border-white/[0.15] transition-colors duration-500 flex-shrink-0"
     >
-      <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-neutral-50 dark:from-neutral-900/50 to-neutral-100/50 dark:to-neutral-800/50" />
+      <div className="absolute inset-0 rounded-xl sm:rounded-2xl bg-gradient-to-br from-neutral-50 dark:from-neutral-900/50 to-neutral-100/50 dark:to-neutral-800/50" />
       
-      <div className="relative h-full w-full p-2 md:p-4 flex flex-col items-center justify-center">
+      <div className="relative h-full w-full p-1.5 sm:p-2 md:p-3 lg:p-4 flex flex-col items-center justify-center">
         <motion.div
           whileHover={{ 
             scale: 1.1,
@@ -186,7 +203,7 @@ const SkillCard = ({
           className="relative"
         >
           <Icon 
-            className="w-10 h-10 md:w-16 md:h-16 transition-transform duration-300" 
+            className="w-6 h-6 sm:w-8 sm:h-8 md:w-12 md:h-12 lg:w-16 lg:h-16 transition-transform duration-300" 
             style={{ color }}
           />
           <div 
@@ -195,8 +212,8 @@ const SkillCard = ({
           />
         </motion.div>
         
-        <div className="mt-3 md:mt-4">
-          <h2 className="text-xs md:text-sm font-medium text-neutral-700 dark:text-neutral-300 text-center transition-colors duration-300 group-hover/skill:text-neutral-900 dark:group-hover/skill:text-white">
+        <div className="mt-1 sm:mt-2 md:mt-3 lg:mt-4">
+          <h2 className="text-[8px] sm:text-xs md:text-sm font-medium text-neutral-700 dark:text-neutral-300 text-center transition-colors duration-300 group-hover/skill:text-neutral-900 dark:group-hover/skill:text-white">
             {title}
           </h2>
         </div>
