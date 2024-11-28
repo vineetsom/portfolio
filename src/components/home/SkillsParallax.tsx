@@ -4,8 +4,8 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { FaJava, FaJs, FaPython, FaHtml5, FaCss3Alt, FaReact, FaNodeJs, FaAngular, FaAws, FaGitAlt, FaDocker, FaJira, FaConfluence } from "react-icons/fa";
 import { SiTypescript, SiCplusplus, SiSpringboot, SiNextdotjs, SiExpress, SiTailwindcss, SiMysql, SiMongodb, SiPostgresql, SiFirebase, SiGooglecloud, SiKubernetes, SiJenkins, SiPostman } from "react-icons/si";
 import { TbApi } from "react-icons/tb";
+import { useTheme } from "next-themes";
 
-// Skills data remains unchanged...
 const skills = {
   row1: [
     { title: "HTML", icon: FaHtml5, color: "#E34F26" },
@@ -20,8 +20,8 @@ const skills = {
     { title: "TailwindCSS", icon: SiTailwindcss, color: "#06B6D4" },
     { title: "React", icon: FaReact, color: "#61DAFB" },
     { title: "Node.js", icon: FaNodeJs, color: "#339933" },
-    { title: "Next.js", icon: SiNextdotjs, color: "#000000" },
-    { title: "Express", icon: SiExpress, color: "#000000" },
+    { title: "Next.js", icon: SiNextdotjs, color: "#000000", darkColor: "#FFFFFF" },
+    { title: "Express", icon: SiExpress, color: "#000000", darkColor: "#FFFFFF" },
     { title: "Angular", icon: FaAngular, color: "#DD0031" },
     { title: "Spring Boot", icon: SiSpringboot, color: "#6DB33F" },
   ],
@@ -76,7 +76,7 @@ export const SkillsParallax = () => {
   return (
     <div id="skills"
       ref={ref}
-      className="min-h-[80vh] bg-white sm:min-h-[130vh] md:min-h-[150vh] pb-8 sm:pb-2 md:pb-2 overflow-hidden antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
+      className="min-h-[80vh] bg-white dark:bg-black sm:min-h-[130vh] md:min-h-[150vh] pb-2 sm:pb-2 md:pb-2 overflow-hidden antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
     >
       <Header />
       <div className="w-full overflow-hidden mt-10 sm:mt-16 md:mt-0">
@@ -178,13 +178,17 @@ const SkillCard = ({
   title,
   icon: Icon,
   color,
+  darkColor,
   translate,
 }: {
   title: string;
   icon: React.ElementType;
   color: string;
+  darkColor?: string;
   translate: any;
 }) => {
+  const { theme } = useTheme();
+
   return (
     <motion.div
       style={{
@@ -204,8 +208,8 @@ const SkillCard = ({
           className="relative"
         >
           <Icon 
-            className="w-6 h-6 sm:w-8 sm:h-8 md:w-12 md:h-12 lg:w-16 lg:h-16 transition-transform duration-300" 
-            style={{ color }}
+            className="w-6 h-6 sm:w-8 sm:h-8 md:w-12 md:h-12 lg:w-16 lg:h-16 transition-transform duration-300"
+            style={{ color: darkColor && theme === 'dark' ? darkColor : color }}
           />
           <div 
             className="absolute inset-0 blur-lg opacity-25 transition-opacity duration-300 group-hover/skill:opacity-40"
