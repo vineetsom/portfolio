@@ -79,7 +79,7 @@ export const SkillsParallax = () => {
       className="min-h-[80vh] bg-white dark:bg-black sm:min-h-[80vh] md:min-h-[80vh] xl:min-h-[120vh] 2xl:min-h-[100vh] overflow-hidden antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
     >
       <Header />
-      <div className="w-full overflow-hidden mt-10 sm:mt-16 md:mt-20 lg:mt-24 xl:mt-32">
+      <div className="w-full overflow-hidden mt-12  sm:mt-12 md:mt-12 lg:mt-12 xl:mt-12">
         <div className="overflow-x-auto scrollbar-hide pl-8 md:pl-0">
           <div className="w-max md:w-auto pr-8 md:pr-0">
             {/* Row 1 */}
@@ -163,7 +163,7 @@ export const SkillsParallax = () => {
 
 const Header = () => {
   return (
-    <div className="text-center max-w-7xl z-20 relative mx-auto pt-28 sm:pt-32 md:pt-36 lg:pt-40 xl:pt-44 pb-4 px-4 w-full left-0 top-0">
+    <div className="text-center max-w-7xl z-20 relative mx-auto pt-28 sm:pt-28 md:pt-20 lg:pt-28 xl:pt-44 pb-4 px-4 w-full left-0 top-0">
       <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-neutral-900 dark:text-white">
         My Skills
       </h1>
@@ -172,6 +172,7 @@ const Header = () => {
         Here are some of the key technologies I work with
       </p>
     </div>
+    
   );
 };
 

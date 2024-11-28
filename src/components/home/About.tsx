@@ -10,7 +10,7 @@ export default function About() {
   const isDark = theme === 'dark';
 
   return (
-    <section id="about" className="min-h-screen py-24 relative bg-white dark:bg-black overflow-hidden">
+    <section id="about" className="min-h-[80vh] py-24 relative bg-white dark:bg-black overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Left side with background and morphing bubble */}
