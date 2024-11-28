@@ -5,6 +5,7 @@ import { FaJava, FaJs, FaPython, FaHtml5, FaCss3Alt, FaReact, FaNodeJs, FaAngula
 import { SiTypescript, SiCplusplus, SiSpringboot, SiNextdotjs, SiExpress, SiTailwindcss, SiMysql, SiMongodb, SiPostgresql, SiFirebase, SiGooglecloud, SiKubernetes, SiJenkins, SiPostman } from "react-icons/si";
 import { TbApi } from "react-icons/tb";
 
+// Skills data remains unchanged...
 const skills = {
   row1: [
     { title: "HTML", icon: FaHtml5, color: "#E34F26" },
@@ -75,10 +76,10 @@ export const SkillsParallax = () => {
   return (
     <div id="skills"
       ref={ref}
-      className="h-[100vh] sm:h-[120vh] md:h-[150vh] pb-8 sm:pb-12 md:pb-20 overflow-hidden antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
+      className="min-h-[80vh] bg-white sm:min-h-[130vh] md:min-h-[150vh] pb-8 sm:pb-2 md:pb-2 overflow-hidden antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
     >
       <Header />
-      <div className="w-full overflow-hidden mt-20 sm:mt-16 md:mt-0">
+      <div className="w-full overflow-hidden mt-10 sm:mt-16 md:mt-0">
         <div className="overflow-x-auto scrollbar-hide pl-8 md:pl-0">
           <div className="w-max md:w-auto pr-8 md:pr-0">
             {/* Row 1 */}
@@ -162,7 +163,7 @@ export const SkillsParallax = () => {
 
 const Header = () => {
   return (
-    <div className="max-w-7xl z-20 relative mx-auto pt-24 pb-4 sm:py-12 md:py-20 lg:py-40 px-4 w-full left-0 top-0">
+    <div className="max-w-7xl z-20 relative mx-auto pt-20 pb-4 sm:py-12 md:py-20 lg:py-40 px-4 w-full left-0 top-0">
       <h1 className="text-2xl sm:text-4xl md:text-6xl lg:text-7xl font-bold dark:text-white">
         My Skills
       </h1>
