@@ -156,11 +156,13 @@ export default function About() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.5 }}
             >
-              I&apos;m a recent computer science graduate from Syracuse University, with a Master's 
-              degree completed in May 2024. With 3+ years of hands-on experience, 
-              fueled by a love for coding. Currently on the lookout for exciting opportunities in 
-              Web Development, Full-stack, and Mobile Application Development. 
-              I&apos;m eager to bring my skills and enthusiasm to a dynamic team.
+              I&apos;m a passionate software developer with a Master&apos;s degree 
+              in Computer Science from Syracuse University and 3+ years 
+              of experience specializing in Full-Stack and Mobile Application 
+              Development. I am dedicated to building scalable and user-friendly 
+              applications. Currently, I am seeking opportunities in the USA
+              tech industry to contribute to impactful projects while continuously 
+              learning and innovating.
             </motion.p>
 
             <motion.a
