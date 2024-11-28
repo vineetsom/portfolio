@@ -1,17 +1,18 @@
 'use client';
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { cn } from "../../utils/cn";
 import { Dancing_Script } from 'next/font/google';
 import ThemeToggle from "./ThemeToggle";
-
 const dancingScript = Dancing_Script({ subsets: ['latin'] });
 
 export const NavbarMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isBeforeAbout, setIsBeforeAbout] = useState(true);
+  const menuRef = useRef<HTMLDivElement>(null);
+  const buttonRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -27,6 +28,27 @@ export const NavbarMenu = () => {
 
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  useEffect(() => {
+    const handleClickOutside = (event: Event) => {
+      const target = event.target as Node;
+      if (isOpen && 
+          menuRef.current && 
+          buttonRef.current && 
+          !menuRef.current.contains(target) && 
+          !buttonRef.current.contains(target)) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener('touchstart', handleClickOutside);
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('touchstart', handleClickOutside);
+    };
+  }, [isOpen]);
 
   const menuItems = [
     { name: "About", link: "#about" },
@@ -70,8 +92,8 @@ export const NavbarMenu = () => {
           animate={{ opacity: 1, y: 0 }}
           className="flex items-center justify-between py-4"
         >
-          {/* Logo */}
-          <Link 
+         {/* Logo */}
+         <Link 
             href="/" 
             className={cn(
               dancingScript.className,
@@ -110,6 +132,7 @@ export const NavbarMenu = () => {
 
           {/* Mobile Menu Button */}
           <button
+            ref={buttonRef}
             onClick={toggleMenu}
             className={cn(
               "md:hidden p-2 rounded-lg transition-colors",
@@ -143,6 +166,7 @@ export const NavbarMenu = () => {
         <AnimatePresence>
           {isOpen && (
             <motion.div
+              ref={menuRef}
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
