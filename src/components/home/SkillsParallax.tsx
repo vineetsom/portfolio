@@ -76,10 +76,10 @@ export const SkillsParallax = () => {
   return (
     <div id="skills"
       ref={ref}
-      className="min-h-[80vh] bg-white dark:bg-black sm:min-h-[130vh] md:min-h-[150vh] pb-2 sm:pb-2 md:pb-2 overflow-hidden antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
+      className="min-h-[80vh] bg-white dark:bg-black sm:min-h-[80vh] md:min-h-[80vh] xl:min-h-[120vh] 2xl:min-h-[100vh] overflow-hidden antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
     >
       <Header />
-      <div className="w-full overflow-hidden mt-10 sm:mt-16 md:mt-0">
+      <div className="w-full overflow-hidden mt-10 sm:mt-16 md:mt-20 lg:mt-24 xl:mt-32">
         <div className="overflow-x-auto scrollbar-hide pl-8 md:pl-0">
           <div className="w-max md:w-auto pr-8 md:pr-0">
             {/* Row 1 */}
@@ -163,11 +163,11 @@ export const SkillsParallax = () => {
 
 const Header = () => {
   return (
-    <div className="max-w-7xl z-20 relative mx-auto pt-20 pb-4 sm:py-12 md:py-20 lg:py-40 px-4 w-full left-0 top-0">
-      <h1 className="text-2xl sm:text-4xl md:text-6xl lg:text-7xl font-bold dark:text-white">
+    <div className="max-w-7xl z-20 relative mx-auto pt-28 sm:pt-32 md:pt-36 lg:pt-40 xl:pt-44 pb-4 px-4 w-full left-0 top-0">
+      <h1 className="text-2xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold dark:text-white">
         My Skills
       </h1>
-      <p className="max-w-3xl text-sm sm:text-base md:text-lg lg:text-xl mt-4 sm:mt-6 md:mt-8 dark:text-neutral-200">
+      <p className="max-w-3xl text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl mt-4 sm:mt-6 md:mt-8 lg:mt-10 dark:text-neutral-200">
         Here are some of the key technologies I work with
       </p>
     </div>
