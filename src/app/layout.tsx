@@ -15,14 +15,22 @@ const inter = Inter({ subsets: ['latin'] })
 const playfair = Playfair_Display({ subsets: ['latin'] })
 const spaceGrotesk = Space_Grotesk({ subsets: ['latin'] })
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+
 export const metadata: Metadata = {
   ...generateMetadata('/'),
   icons: {
     icon: [
-      { url: '/favicon.svg', type: 'image/svg+xml' },
+      { url: `${basePath}/favicon.svg`, type: 'image/svg+xml' },
+      { url: `${basePath}/favicon.svg`, type: 'image/svg+xml', sizes: 'any' }
     ],
-    shortcut: '/favicon.svg',
-    apple: '/favicon.svg',
+    shortcut: `${basePath}/favicon.svg`,
+    apple: `${basePath}/favicon.svg`,
+    other: {
+      rel: 'mask-icon',
+      url: `${basePath}/favicon.svg`,
+      color: '#8B5CF6'
+    }
   }
 }
 
@@ -42,9 +50,10 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <head>
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <link rel="shortcut icon" type="image/svg+xml" href="/favicon.svg" />
-        <link rel="apple-touch-icon" href="/favicon.svg" />
+        <link rel="icon" type="image/svg+xml" href={`${basePath}/favicon.svg`} />
+        <link rel="shortcut icon" type="image/svg+xml" href={`${basePath}/favicon.svg`} />
+        <link rel="apple-touch-icon" href={`${basePath}/favicon.svg`} />
+        <link rel="mask-icon" href={`${basePath}/favicon.svg`} color="#8B5CF6" />
         <Script id="viewport-fix" strategy="beforeInteractive">{`
           function setViewportHeight() {
             let vh = window.innerHeight * 0.01;
