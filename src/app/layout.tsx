@@ -16,7 +16,14 @@ const playfair = Playfair_Display({ subsets: ['latin'] })
 const spaceGrotesk = Space_Grotesk({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  ...generateMetadata('/')
+  ...generateMetadata('/'),
+  icons: {
+    icon: [
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+    ],
+    shortcut: '/favicon.svg',
+    apple: '/favicon.svg',
+  }
 }
 
 export const viewport: Viewport = {
@@ -35,6 +42,9 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <head>
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="shortcut icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="apple-touch-icon" href="/favicon.svg" />
         <Script id="viewport-fix" strategy="beforeInteractive">{`
           function setViewportHeight() {
             let vh = window.innerHeight * 0.01;

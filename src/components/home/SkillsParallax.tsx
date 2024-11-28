@@ -163,11 +163,12 @@ export const SkillsParallax = () => {
 
 const Header = () => {
   return (
-    <div className="max-w-7xl z-20 relative mx-auto pt-28 sm:pt-32 md:pt-36 lg:pt-40 xl:pt-44 pb-4 px-4 w-full left-0 top-0">
-      <h1 className="text-2xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold dark:text-white">
+    <div className="text-center max-w-7xl z-20 relative mx-auto pt-28 sm:pt-32 md:pt-36 lg:pt-40 xl:pt-44 pb-4 px-4 w-full left-0 top-0">
+      <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-neutral-900 dark:text-white">
         My Skills
       </h1>
-      <p className="max-w-3xl text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl mt-4 sm:mt-6 md:mt-8 lg:mt-10 dark:text-neutral-200">
+      {/* <p className="max-w-3xl text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl mt-4 sm:mt-6 md:mt-8 lg:mt-10 dark:text-neutral-200"> */}
+      <p className="text-sm sm:text-base text-neutral-600 dark:text-neutral-400 mt-4 sm:mt-6 md:mt-8 lg:mt-10 max-w-2xl mx-auto">
         Here are some of the key technologies I work with
       </p>
     </div>

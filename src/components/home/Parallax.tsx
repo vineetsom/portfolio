@@ -21,11 +21,26 @@ const createStarGrid = (columns: number, rows: number, variation: number = 0.2) 
       stars.push({
         x,
         y,
-        size: Math.random() * 2 + 1,
-        baseOpacity: Math.random() * 0.3 + 0.1,
-        twinkleSpeed: Math.random() * 2 + 1.5,
+        size: Math.random() * 3 + 1,
+        baseOpacity: Math.random() * 0.2 + 0.1,
+        twinkleSpeed: Math.random() * 2 + 1,
       });
     }
+  }
+  return stars;
+};
+
+// Create light mode stars with fewer stars and concentrated at the top
+const createLightModeStars = (count: number) => {
+  const stars = [];
+  for (let i = 0; i < count; i++) {
+    stars.push({
+      x: Math.random() * 100,
+      y: Math.random() * 30, // Only in top 30% of screen
+      size: Math.random() * 3 + 1,
+      baseOpacity: Math.random() * 0.3 + 0.1,
+      twinkleSpeed: Math.random() * 2 + 1,
+    });
   }
   return stars;
 };
@@ -39,7 +54,9 @@ const Parallax = () => {
   // Create stars outside of render
   const [baseStars] = useState(() => createStarGrid(isMobile ? 6 : 8, isMobile ? 4 : 6));
   const [additionalStars] = useState(() => createStarGrid(isMobile ? 8 : 10, isMobile ? 6 : 8));
+  const [lightModeStars] = useState(() => createLightModeStars(15)); // Fewer stars for light mode
 
+ 
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start start", "end start"],
@@ -97,7 +114,6 @@ const Parallax = () => {
     [0, 0.08],
     isDark ? darkGradients : lightGradients
   );
-
   return (
     <div
       ref={ref}
@@ -109,16 +125,82 @@ const Parallax = () => {
         style={{ background: gradientTransform }}
       />
 
-      {/* Stars container - always render but control visibility with opacity */}
-      <motion.div 
-        className="absolute inset-0 transition-opacity duration-1000"
-        style={{ opacity: isDark ? 1 : 0 }}
-      >
-        {/* Base layer stars */}
-        <div>
-          {baseStars.map((star, i) => (
+      {/* Dark mode stars */}
+      {isDark && (
+        <motion.div 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className="absolute inset-0"
+        >
+          {/* Base layer stars */}
+          <div>
+            {baseStars.map((star, i) => (
+              <motion.div
+                key={`base-star-${i}`}
+                className="absolute rounded-full"
+                style={{
+                  width: star.size,
+                  height: star.size,
+                  left: `${star.x}%`,
+                  top: `${star.y}%`,
+                  background: 'radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 70%)',
+                  opacity: star.baseOpacity
+                }}
+                animate={{
+                  opacity: [star.baseOpacity, star.baseOpacity * 2, star.baseOpacity],
+                  scale: [1, 1.2, 1],
+                }}
+                transition={{
+                  duration: star.twinkleSpeed,
+                  repeat: Infinity,
+                  repeatType: "reverse"
+                }}
+              />
+            ))}
+          </div>
+
+          {/* Additional stars */}
+          <motion.div style={{ opacity: starsOpacity }}>
+            {additionalStars.map((star, i) => (
+              <motion.div
+                key={`scroll-star-${i}`}
+                className="absolute rounded-full"
+                style={{
+                  width: star.size,
+                  height: star.size,
+                  left: `${star.x}%`,
+                  top: `${star.y}%`,
+                  background: 'radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 70%)',
+                }}
+                animate={{
+                  opacity: [star.baseOpacity, star.baseOpacity * 2, star.baseOpacity],
+                  scale: [1, 1.2, 1],
+                }}
+                transition={{
+                  duration: star.twinkleSpeed,
+                  repeat: Infinity,
+                  repeatType: "reverse",
+                  delay: Math.random()
+                }}
+              />
+            ))}
+          </motion.div>
+        </motion.div>
+      )}
+
+      {/* Light mode stars */}
+      {!isDark && (
+
+<motion.div 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className="absolute inset-0"
+        >
+          {lightModeStars.map((star, i) => (
             <motion.div
-              key={`base-star-${i}`}
+              key={`light-star-${i}`}
               className="absolute rounded-full"
               style={{
                 width: star.size,
@@ -130,6 +212,7 @@ const Parallax = () => {
               }}
               animate={{
                 opacity: [star.baseOpacity, star.baseOpacity * 1.5, star.baseOpacity],
+                scale: [1, 1.1, 1],
               }}
               transition={{
                 duration: star.twinkleSpeed,
@@ -138,37 +221,14 @@ const Parallax = () => {
               }}
             />
           ))}
-        </div>
-
-        {/* Additional stars */}
-        <motion.div style={{ opacity: starsOpacity }}>
-          {additionalStars.map((star, i) => (
-            <motion.div
-              key={`scroll-star-${i}`}
-              className="absolute rounded-full"
-              style={{
-                width: star.size,
-                height: star.size,
-                left: `${star.x}%`,
-                top: `${star.y}%`,
-                background: 'radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 70%)',
-              }}
-              animate={{
-                opacity: [star.baseOpacity, star.baseOpacity * 1.8, star.baseOpacity],
-              }}
-              transition={{
-                duration: star.twinkleSpeed,
-                repeat: Infinity,
-                repeatType: "reverse",
-                delay: Math.random()
-              }}
-            />
-          ))}
         </motion.div>
-      </motion.div>
+      )}
 
-      {/* Sun/Moon */}
-      <motion.div
+      {/* Rest of the component remains the same */}
+      {/* ... */}
+   
+     {/* Sun/Moon */}
+     <motion.div
         className="absolute left-1/2 -translate-x-1/2"
         style={{ y: celestialY }}
       >
@@ -287,7 +347,7 @@ const Parallax = () => {
           Scroll
         </span>
       </motion.div>
-    </div>
+ </div>
   );
 };
 
