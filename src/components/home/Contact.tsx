@@ -45,7 +45,7 @@ export default function Contact() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {/* Email */}
                 <div className="text-center">
-                  <FaEnvelope className="w-12 h-12 mx-auto mb-4 text-violet-500 dark:text-violet-400" />
+                  <FaEnvelope className="w-10 h-10 mx-auto mb-4 text-violet-500 dark:text-violet-400" />
                   <p className="text-lg text-neutral-600 dark:text-neutral-400 mb-4">
                     Email
                   </p>
@@ -74,7 +74,7 @@ export default function Contact() {
 
                 {/* Phone */}
                 <div className="text-center">
-                  <FaPhone className="w-12 h-12 mx-auto mb-4 text-violet-500 dark:text-violet-400" />
+                  <FaPhone className="w-10 h-10 mx-auto mb-4 text-violet-500 dark:text-violet-400" />
                   <p className="text-lg text-neutral-600 dark:text-neutral-400 mb-4">
                     Phone
                   </p>

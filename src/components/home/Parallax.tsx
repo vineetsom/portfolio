@@ -4,10 +4,12 @@ import { useRef, useEffect, useState } from "react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { Playfair_Display, Space_Grotesk } from 'next/font/google';
 import { useTheme } from 'next-themes';
+import { ContinuousTypewriter } from "../ui/continuous-typewriter";
 
 const playfair = Playfair_Display({ subsets: ['latin'] });
 const spaceGrotesk = Space_Grotesk({ subsets: ['latin'] });
 
+// ... (rest of the imports and star-related code remains the same)
 const createStarGrid = (columns: number, rows: number, variation: number = 0.2) => {
   const stars = [];
   const colWidth = 100 / columns;
@@ -224,11 +226,57 @@ const Parallax = () => {
         </motion.div>
       )}
 
-      {/* Rest of the component remains the same */}
-      {/* ... */}
-   
-     {/* Sun/Moon */}
-     <motion.div
+      {/* Text content */}
+      <motion.div
+        style={{ opacity: textOpacity }}
+        className="absolute top-[12%] sm:top-1/4 left-1/2 -translate-x-1/2 text-center z-10 w-full px-4 sm:px-0"
+      >
+        <p className={`${spaceGrotesk.className} text-[10px] xs:text-xs sm:text-sm md:text-lg text-white/80 mb-2 mx-auto tracking-wide font-light`}>
+          From logic to Legos, I build solutions with precision.
+        </p>
+        <h1 className={`${playfair.className} text-xl xs:text-2xl sm:text-4xl md:text-6xl lg:text-8xl font-bold text-white mb-2 sm:mb-4 tracking-wider`}>
+          Devika Shendkar
+        </h1>
+        <div className={`${playfair.className} text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl text-white/90 mb-2 sm:mb-4 font-light tracking-widest relative h-[1.5em] flex items-center justify-center gap-2`}>
+          {/* <span>I'm a</span> */}
+          <ContinuousTypewriter 
+            words={[
+              "Software Developer",
+              "Full Stack Developer",
+              "Backend Developer",
+              "Frontend Developer",
+              "Java Developer"
+            ]}
+            className="text-white min-w-[12ch]"
+          />
+          
+        </div>
+        <p className={`${spaceGrotesk.className} text-[10px] xs:text-xs sm:text-sm md:text-lg text-white/80 mt-0 mb-4 mx-auto tracking-wide font-light`}>Actively seeking Software Developer roles</p>
+        <div className="flex justify-center gap-6">
+          <motion.a
+            href="https://github.com/devika7300"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            className="p-2.5 sm:p-3 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
+          >
+            <FaGithub className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+          </motion.a>
+          <motion.a
+            href="https://www.linkedin.com/in/devika-shendkar/"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            className="p-2.5 sm:p-3 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
+          >
+            <FaLinkedin className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+          </motion.a>
+        </div>
+      </motion.div>
+ {/* Sun/Moon */}
+ <motion.div
         className="absolute left-1/2 -translate-x-1/2"
         style={{ y: celestialY }}
       >
@@ -292,44 +340,6 @@ const Parallax = () => {
         </svg>
       </motion.div>
 
-      {/* Text content */}
-      <motion.div
-        style={{ opacity: textOpacity }}
-        className="absolute top-[12%] sm:top-1/4 left-1/2 -translate-x-1/2 text-center z-10 w-full px-4 sm:px-0"
-      >
-        <p className={`${spaceGrotesk.className} text-[10px] xs:text-xs sm:text-sm md:text-lg text-white/80 mb-2 mx-auto tracking-wide font-light`}>
-          From logic to Legos, I build solutions with precision.
-        </p>
-        <h1 className={`${playfair.className} text-xl xs:text-2xl sm:text-4xl md:text-6xl lg:text-8xl font-bold text-white mb-2 sm:mb-4 tracking-wider`}>
-          Devika Shendkar
-        </h1>
-        <p className={`${playfair.className} text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl text-white/90 mb-4 sm:mb-8 font-light tracking-widest`}>
-          Software Developer
-        </p>
-        <div className="flex justify-center gap-6">
-          <motion.a
-            href="https://github.com/devika7300"
-            target="_blank"
-            rel="noopener noreferrer"
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            className="p-2.5 sm:p-3 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
-          >
-            <FaGithub className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
-          </motion.a>
-          <motion.a
-            href="https://www.linkedin.com/in/devika-shendkar/"
-            target="_blank"
-            rel="noopener noreferrer"
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            className="p-2.5 sm:p-3 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
-          >
-            <FaLinkedin className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
-          </motion.a>
-        </div>
-      </motion.div>
-
       {/* Scroll Indicator */}
       <motion.div
         className="absolute bottom-6 sm:bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 sm:gap-2"
@@ -347,8 +357,10 @@ const Parallax = () => {
           Scroll
         </span>
       </motion.div>
- </div>
+    </div>
   );
 };
 
 export default Parallax;
+
+
