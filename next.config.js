@@ -3,12 +3,15 @@
 const nextConfig = {
   output: 'export',
   images: {
+    loader: 'custom',
+    loaderFile: './src/lib/imageLoader.ts',
     unoptimized: true,
   },
   basePath: '/devika-final-portfolio',
+  distDir: 'out',
   eslint: {
-    // Warning: This allows production builds to successfully complete even if
-    // your project has ESLint errors.
     ignoreDuringBuilds: true,
   },
 }
+
+module.exports = nextConfig
