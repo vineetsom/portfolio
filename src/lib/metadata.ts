@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
-import { FaReact, FaAws, FaMoneyCheckAlt, FaExchangeAlt, FaCloud, FaAndroid, FaMicrochip, FaRaspberryPi, FaTasks } from "react-icons/fa";
+import { FaReact, FaAws, FaMoneyCheckAlt, FaExchangeAlt, FaCloud, FaAndroid, FaMicrochip, FaRaspberryPi, FaTasks, FaStripeS } from "react-icons/fa";
 import { FaJava } from 'react-icons/fa6';
-import { SiSpringboot, SiMysql, SiTypescript, SiNextdotjs, SiChartdotjs, SiTailwindcss, SiAppwrite, SiNodedotjs, SiExpress, SiPostgresql, SiPrisma, SiSpring, SiPostman, SiHibernate, SiGithub, SiSwift, SiFirebase, SiXcode } from "react-icons/si";
+import { SiSpringboot, SiMysql, SiTypescript, SiNextdotjs, SiChartdotjs, SiTailwindcss, SiAppwrite, SiNodedotjs, SiExpress, SiPostgresql, SiPrisma, SiSpring, SiPostman, SiHibernate, SiGithub, SiSwift, SiFirebase, SiXcode, SiDjango, SiReact } from "react-icons/si";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
 
@@ -80,6 +80,21 @@ export const experiences = [
   },
 ];
 
+export const education = [
+  {
+    title: "Master of Science in Computer Science",
+    institution: "Syracuse University",
+    location: "Syracuse, NY",
+    date: "2022 - 2024",
+  },
+  {
+    title: "Bachelor of Engineering in Information Technology",
+    institution: "University of Pune",
+    location: "Pune, IN",
+    date: "2017 - 2021",
+  }
+];
+
 export const projects = [
   {
     id: 1,
@@ -116,6 +131,20 @@ export const projects = [
   },
   {
     id: 3,
+    title: "Real-Time Movie Ticket Booking System",
+    des: "Developed a web application using Django REST Framework and React TypeScript, featuring real-time seat availability updates, modular microservices architecture, and multithreaded operations for efficient concurrent booking management.",
+    img: "images/projects/movie.jpg",
+    icons: [
+      { icon: SiDjango, color: "#092E20" },  // Django
+      { icon: SiReact, color: "#61DAFB" },  // React
+      { icon: SiTypescript, color: "#3178C6" },  // TypeScript
+      { icon: SiFirebase, color: "#FFCA28" },  // Firebase
+      { icon: FaStripeS, color: "#008CDD" }  // Stripe (Using Stripe S icon as there's no specific SiStripe)
+  ],
+    link: "https://github.com/devika7300/real-time-movie-ticket-booking-system",
+  },
+  {
+    id: 4,
     title: "E-commerce Backend Application",
     des: " E-commerce app with functionalities such as product listings, categories, order processing, shopping carts, and user profiles which supports smooth scalability as business needs grow.",
     img: "images/projects/project3.png",
@@ -130,20 +159,20 @@ export const projects = [
     
     link: "https://github.com/devika7300/Spring-boot-ecommerce-app",
   },
-  {
-    id: 4,
-    title: "Green Guardian - Automated Plant Care System",
-    des: "Developed an IoT-based automated plant care system that monitors soil moisture and temperature, triggering automated watering.",
-    img: "images/projects/project4.png",
-    icons: [
-      { icon: FaJava, color: "#007396" },  // Core Java
-      { icon: FaCloud, color: "#0B2C4A" },  // Using a cloud icon for ThingSpeak
-      { icon: FaAndroid, color: "#3DDC84" },  // Android Development
-      { icon: FaMicrochip, color: "#E7352C" },  // Using a microchip icon for ESP32 Microcontrollers
-      { icon: FaRaspberryPi, color: "#C51A4A" }   // ESP32 Microcontrollers (Espressif is the company behind ESP32, using the company color)
-    ],
-    link: "https://github.com/devika7300/Green-Gardian?tab=readme-ov-file",
-  },
+  // {
+  //   id: 4,
+  //   title: "Green Guardian - Automated Plant Care System",
+  //   des: "Developed an IoT-based automated plant care system that monitors soil moisture and temperature, triggering automated watering.",
+  //   img: "images/projects/project4.png",
+  //   icons: [
+  //     { icon: FaJava, color: "#007396" },  // Core Java
+  //     { icon: FaCloud, color: "#0B2C4A" },  // Using a cloud icon for ThingSpeak
+  //     { icon: FaAndroid, color: "#3DDC84" },  // Android Development
+  //     { icon: FaMicrochip, color: "#E7352C" },  // Using a microchip icon for ESP32 Microcontrollers
+  //     { icon: FaRaspberryPi, color: "#C51A4A" }   // ESP32 Microcontrollers (Espressif is the company behind ESP32, using the company color)
+  //   ],
+  //   link: "https://github.com/devika7300/Green-Gardian?tab=readme-ov-file",
+  // },
   {
     id: 5,
     title: "Shift Management",

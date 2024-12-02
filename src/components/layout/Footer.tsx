@@ -60,6 +60,23 @@ export default function Footer() {
             ))}
           </motion.div>
 
+          {/* Portfolio Source Code Link */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+          >
+            <a
+              href="https://github.com/devika7300/portfolio"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-purple-600 dark:text-purple-400 hover:text-purple-700 dark:hover:text-purple-300 transition-colors duration-200"
+            >
+              View Portfolio Source Code →
+            </a>
+          </motion.div>
+
           {/* Copyright */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
