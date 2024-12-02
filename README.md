@@ -65,7 +65,6 @@ The portfolio is automatically deployed to GitHub Pages using GitHub Actions whe
 1. Builds the Next.js application
 2. Generates static files
 3. Deploys to GitHub Pages
-4. Makes the site available at [https://devika7300.github.io/portfolio/](https://devika7300.github.io/portfolio/)
 
 ## License
 
