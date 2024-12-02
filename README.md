@@ -4,7 +4,7 @@ A modern, responsive portfolio website built with Next.js, TypeScript, and Tailw
 
 ## Live Demo
 
-Visit the live portfolio at: [https://devika7300.github.io/portfolio/](https://devika7300.github.io/portfolio/)
+Visit the live portfolio at:[https://devikashendkar.com/](https://devikashendkar.com/)
 
 ## Features
 
@@ -74,6 +74,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## Author
 
 **Devika Shendkar**
-- Portfolio: [https://devika7300.github.io/portfolio/](https://devika7300.github.io/portfolio/)
+- Portfolio: [https://devikashendkar.com/](https://devikashendkar.com/)
 - LinkedIn: [devika-shendkar](https://www.linkedin.com/in/devika-shendkar/)
 - GitHub: [@devika7300](https://github.com/devika7300)
