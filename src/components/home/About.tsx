@@ -51,7 +51,7 @@ export default function About() {
             {/* Fixed position morphing bubble */}
             <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
               <motion.div
-                className="relative w-[300px] h-[300px] overflow-hidden"
+                className="relative w-[400px] h-[400px] bg-white overflow-hidden"
                 animate={{
                   borderRadius: [
                     '60% 40% 30% 70%/60% 30% 70% 40%',
@@ -87,7 +87,7 @@ export default function About() {
                 >
                   <Image
                     loader={imageLoader}
-                    src="images/devika1.png"
+                    src="images/devika2.png"
                     alt="Profile"
                     fill
                     className="object-cover"
