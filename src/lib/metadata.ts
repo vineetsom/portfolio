@@ -57,8 +57,8 @@ export const experiences = [
     location: "Boston, MA",
     type: "Full-time",
     date: "2024 - Present",
-    description: "Developed an event-driven data management system using the PERN stack, enhancing data processing and retrieval efficiencies. Collaborated with multiple cross-functional teams in an Agile environment and optimized system architecture with AWS services. Additionally, I established CI/CD pipelines with GitLab CI, streamlining deployments and accelerating feature rollouts.",
-    skills: ["PostgreSQL", "Express", "React.js", "Node.js", "GitLab CI", "AWS"],
+    description: "Built an event-driven trading system using the PERN stack with WebSocket, improving real-time order processing. Optimized market data APIs with caching and load balancing for better reliability. Enhanced system architecture with AWS services while collaborating in an Agile environment.",
+    skills: ["PostgreSQL", "Express", "React.js", "Node.js", "WebSocket", "AWS", "Agile"],
   },
   {
     title: "Application Development Associate",
@@ -66,8 +66,8 @@ export const experiences = [
     location: "Pune, IN",
     type: "Full-time",
     date: "2021 - 2022",
-    description: "Spearheaded the development of a microservices-based inventory system, enhancing stock accuracy and automating operations for multiple locations. Migrated the backend system to Kubernetes-managed AWS, improving system capacity and integrating Apache Kafka for real-time updates.managed the entire software development lifecycle, delivering the project two weeks ahead of schedule and reducing costs.",
-    skills: ["Java", "Spring boot", "React", "AWS", "MySQL", "Kafka", "REST API", "Kubernetes", "Jenkins"],
+    description: "Spearheaded the development of a microservices-based inventory system using Spring Boot, React.js, and MongoDB, improving stock accuracy and automating operations across multiple locations. Migrated backend services to Azure Kubernetes Service (AKS), reducing downtime and integrating Apache Kafka for real-time updates. Managed the entire software development lifecycle, delivering the project two weeks ahead of schedule while optimizing costs.",
+    skills: ["Java", "Spring boot", "React", "Azure Kubernetes Service(AKS)", "MongoDB", "Kafka", "REST API", "Jenkins"],
   },
   {
     title: "Software Developer",
@@ -75,8 +75,8 @@ export const experiences = [
     location: "Bangalore, IN",
     type: "Full-time",
     date: "2019 - 2021",
-    description: "Developed 3+ full-stack applications, enhancing scalability and engagement. Created a hybrid database with MySQL and MongoDB to optimize queries. Designed RESTful APIs for efficient data integration. Improved CI/CD pipelines with Jenkins and Docker, and implemented security with Spring Security and JUnit testing. Led Agile workflows using Git and Jira for timely project delivery.",
-    skills: ["Java", "Spring boot", "React", "AWS", "MySQL", "MongoDB", "Docker", "Jenkins"],
+    description: "Developed 3+ full-stack applications, improving scalability and engagement. Built an event management web app with Spring Boot and MySQL, optimizing API performance. Designed a CRM dashboard using React.js, Redux, and MongoDB for efficient data handling. Architected an e-commerce backend with Node.js and PayPal integration, ensuring reliable transactions. Improved CI/CD pipelines with Jenkins and Docker while enhancing security with Spring Security and JUnit testing.",
+    skills: ["Java", "Spring boot", "React", "Node.js", "Express", "AWS", "MySQL", "MongoDB", "Docker", "Jenkins"],
   },
 ];
 
