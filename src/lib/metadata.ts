@@ -57,7 +57,7 @@ export const experiences = [
     location: "Boston, MA",
     type: "Full-time",
     date: "2024 - Present",
-    description: "Built an event-driven trading system using the PERN stack with WebSocket, improving real-time order processing. Optimized market data APIs with caching and load balancing for better reliability. Enhanced system architecture with AWS services while collaborating in an Agile environment.",
+    description: "Built an event-driven data processing system using the PERN stack with WebSocket, improving real-time data processing. Optimized RESTful APIs with caching and load balancing for better reliability. Enhanced system architecture with AWS services while collaborating in an Agile environment.",
     skills: ["PostgreSQL", "Express", "React.js", "Node.js", "WebSocket", "AWS", "Agile"],
   },
   {
