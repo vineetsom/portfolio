@@ -7,7 +7,7 @@ const nextConfig = {
     loaderFile: './src/lib/imageLoader.ts',
     unoptimized: true,
   },
-  basePath: '/portfolio',
+  // basePath: '/portfolio',
   distDir: 'out',
   eslint: {
     ignoreDuringBuilds: true,
