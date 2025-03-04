@@ -15,7 +15,8 @@ const inter = Inter({ subsets: ['latin'] })
 const playfair = Playfair_Display({ subsets: ['latin'] })
 const spaceGrotesk = Space_Grotesk({ subsets: ['latin'] })
 
-const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+// const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+const basePath = '';
 
 export const metadata: Metadata = {
   ...generateMetadata('/'),
