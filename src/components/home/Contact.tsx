@@ -6,8 +6,8 @@ import { CardHoverEffect } from '../ui/card-hover-effect';
 import { useTheme } from 'next-themes';
 
 export default function Contact() {
-  const email = "devikavid@gmail.com";
-  const phone = "+1 (315) 395 3450";
+  const email = "devikashendkar7@gmail.com";
+  const phone = "+1 (315) 288 6282";
   const { theme } = useTheme();
   const isDark = theme === 'dark';
 
