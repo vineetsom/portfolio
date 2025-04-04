@@ -157,7 +157,7 @@ export default function About() {
               transition={{ duration: 0.5, delay: 0.5 }}
             >
               I&apos;m a passionate software developer with a Master&apos;s degree 
-              in Computer Science from Syracuse University and 3+ years 
+              in Computer Science from Syracuse University and 4 years 
               of experience specializing in Full-Stack and Mobile Application 
               Development. I am dedicated to building scalable and user-friendly 
               applications. Currently, I am seeking opportunities in the USA
