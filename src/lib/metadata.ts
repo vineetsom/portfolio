@@ -57,8 +57,8 @@ export const experiences = [
     location: "Boston, MA",
     type: "Full-time",
     date: "2024 - Present",
-    description: "Built an event-driven data processing system using the PERN stack with WebSocket, improving real-time data processing. Optimized RESTful APIs with caching and load balancing for better reliability. Enhanced system architecture with AWS services while collaborating in an Agile environment.",
-    skills: ["PostgreSQL", "Express", "React.js", "Node.js", "WebSocket", "AWS", "Agile"],
+    description: "Built an event-driven data processing system, improving real-time data processing. Created responsive monitoring dashboards with Angular, RxJS for reactive state management. Optimized RESTful APIs with caching and load balancing for better reliability. Enhanced system architecture with AWS services while collaborating in an Agile environment.",
+    skills: ["PostgreSQL", "Express", "Angular", "Node.js", "WebSocket", "AWS", "Agile"],
   },
   {
     title: "Application Development Associate",
@@ -66,8 +66,8 @@ export const experiences = [
     location: "Pune, IN",
     type: "Full-time",
     date: "2021 - 2022",
-    description: "Spearheaded the development of a microservices-based inventory system using Spring Boot, React.js, and MongoDB, improving stock accuracy and automating operations across multiple locations. Migrated backend services to Azure Kubernetes Service (AKS), reducing downtime and integrating Apache Kafka for real-time updates. Managed the entire software development lifecycle, delivering the project two weeks ahead of schedule while optimizing costs.",
-    skills: ["Java", "Spring boot", "React", "Azure Kubernetes Service(AKS)", "MongoDB", "Kafka", "REST API", "Jenkins"],
+    description: "Spearheaded the development of a microservices-based inventory system using Spring Boot, React.js, and MongoDB, improving stock accuracy and automating operations across multiple locations. Migrated backend services to Google Cloud Platform (GCP), reducing downtime and integrating Apache Kafka for real-time updates. Managed the entire software development lifecycle, delivering the project two weeks ahead of schedule while optimizing costs.",
+    skills: ["Java", "Spring boot", "React", "Kubernetes", "MongoDB", "Kafka", "REST API", "Jenkins", "GCP"],
   },
   {
     title: "Software Developer",
