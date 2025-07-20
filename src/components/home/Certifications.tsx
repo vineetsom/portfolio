@@ -25,10 +25,10 @@ const certifications = [
     link: "https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/J.P.%20Morgan/R5iK7HMxJGBgaSbvk_J.P.%20Morgan_HJHgEHLjtF3KBfAnM_1708033826214_completion_certificate.pdf"
   },
   {
-    title: "Complete Web Developer Course",
+    title: "Android Developer Course",
     subtitle: "Udemy",
     date: "May 2020",
-    link: "https://www.linkedin.com/in/devika-shendkar/details/certifications/1706639574181/single-media-viewer/?profileId=ACoAAC3gUkoB0KAkIkd9-g8wEOW2BdP8zE-zVyk"
+    link: "UC-cf67ca0c-e646-45f4-82a0-d1631149fe04"
   },
   {
     title: "Winner - Smart India Hackathon 2019",

@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { FaJava, FaJs, FaPython, FaHtml5, FaCss3Alt, FaReact, FaNodeJs, FaAngular, FaAws, FaGitAlt, FaDocker, FaJira, FaConfluence } from "react-icons/fa";
+import { FaJava, FaJs, FaPython, FaHtml5, FaCss3Alt, FaReact, FaNodeJs, FaAngular, FaAws, FaGitAlt, FaDocker, FaJira, FaConfluence, FaSwift } from "react-icons/fa";
 import { SiTypescript, SiCplusplus, SiSpringboot, SiNextdotjs, SiExpress, SiTailwindcss, SiMysql, SiMongodb, SiPostgresql, SiFirebase, SiGooglecloud, SiKubernetes, SiJenkins, SiPostman } from "react-icons/si";
 import { TbApi } from "react-icons/tb";
 import { useTheme } from "next-themes";
@@ -9,11 +9,11 @@ import { useTheme } from "next-themes";
 const skills = {
   row1: [
     { title: "HTML", icon: FaHtml5, color: "#E34F26" },
-    { title: "CSS", icon: FaCss3Alt, color: "#1572B6" },
     { title: "Python", icon: FaPython, color: "#3776AB" },
     { title: "C++", icon: SiCplusplus, color: "#00599C" },
     { title: "TypeScript", icon: SiTypescript, color: "#3178C6" },
     { title: "JavaScript", icon: FaJs, color: "#F7DF1E" },
+    { title: "Swift", icon: FaSwift, color: "#E34F26" },
     { title: "Java", icon: FaJava, color: "#007396" },
   ],
   row2: [

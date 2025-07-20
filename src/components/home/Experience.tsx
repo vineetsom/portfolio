@@ -13,7 +13,7 @@ interface Experience {
   location: string;
   type: string;
   date: string;
-  description: string;
+  // description: string;
   skills: string[];
 }
 
@@ -158,9 +158,9 @@ export default function Experience() {
                         <span>{experience.location}</span>
                       </div>
 
-                      <p className="text-xs sm:text-sm text-neutral-700 dark:text-neutral-300 mb-3 sm:mb-4 leading-relaxed">
+                      {/* <p className="text-xs sm:text-sm text-neutral-700 dark:text-neutral-300 mb-3 sm:mb-4 leading-relaxed">
                         {experience.description}
-                      </p>
+                      </p> */}
 
                       <div className="flex flex-wrap gap-1.5 sm:gap-2">
                         {experience.skills.map((skill: string) => (

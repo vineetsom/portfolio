@@ -54,7 +54,7 @@ export const NavbarMenu = () => {
     { name: "About", link: "#about" },
     { name: "Skills", link: "#skills" },
     { name: "Projects", link: "#projects" },
-    { name: "Experience", link: "#experience" },
+    { name: "Education", link: "#education" },
     { name: "Certifications", link: "#certifications" },
     { name: "Contact", link: "#contact" },
   ];

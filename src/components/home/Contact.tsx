@@ -1,13 +1,12 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { FaEnvelope, FaPhone } from 'react-icons/fa';
+import { FaEnvelope } from 'react-icons/fa';
 import { CardHoverEffect } from '../ui/card-hover-effect';
 import { useTheme } from 'next-themes';
 
 export default function Contact() {
   const email = "devikashendkar7@gmail.com";
-  const phone = "+1 (315) 288 6282";
   const { theme } = useTheme();
   const isDark = theme === 'dark';
 
@@ -42,7 +41,7 @@ export default function Contact() {
               : '!bg-gradient-to-br !from-white/5 !to-white/10'
           } backdrop-blur-sm !border-0 shadow-lg`}>
             <div className="p-8">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="max-w-sm mx-auto">
                 {/* Email */}
                 <div className="text-center">
                   <FaEnvelope className="w-10 h-10 mx-auto mb-4 text-violet-500 dark:text-violet-400" />
@@ -71,35 +70,6 @@ export default function Contact() {
                     </motion.span>
                   </motion.a>
                 </div>
-
-                {/* Phone */}
-                <div className="text-center">
-                  <FaPhone className="w-10 h-10 mx-auto mb-4 text-violet-500 dark:text-violet-400" />
-                  <p className="text-lg text-neutral-600 dark:text-neutral-400 mb-4">
-                    Phone
-                  </p>
-                  <p className="text-lg font-medium text-neutral-900 dark:text-white mb-6">
-                    {phone}
-                  </p>
-                  <motion.a
-                    href={`tel:${phone.replace(/\D/g, '')}`}
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                    className={`inline-flex items-center justify-center gap-2 py-3 px-6 rounded-lg ${
-                      isDark
-                        ? 'bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-500 hover:to-purple-500'
-                        : 'bg-violet-500 hover:bg-violet-700'
-                    } text-white transition-all duration-200 font-medium`}
-                  >
-                    Call Me
-                    <motion.span
-                      animate={{ x: [0, 5, 0] }}
-                      transition={{ duration: 1.5, repeat: Infinity }}
-                    >
-                      →
-                    </motion.span>
-                  </motion.a>
-                </div>
               </div>
             </div>
           </CardHoverEffect>
@@ -108,4 +78,3 @@ export default function Contact() {
     </section>
   );
 }
-

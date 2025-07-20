@@ -56,8 +56,8 @@ export const experiences = [
     company: "PTC",
     location: "Boston, MA",
     type: "Full-time",
-    date: "2024 - Present",
-    description: "Built an event-driven data processing system using the PERN stack with WebSocket, improving real-time data processing. Optimized RESTful APIs with caching and load balancing for better reliability. Enhanced system architecture with AWS services while collaborating in an Agile environment.",
+    date: "2024 - 2025",
+    // description: "Built an event-driven data processing system using the PERN stack with WebSocket, improving real-time data processing. Optimized RESTful APIs with caching and load balancing for better reliability. Enhanced system architecture with AWS services while collaborating in an Agile environment.",
     skills: ["PostgreSQL", "Express", "React.js", "Node.js", "WebSocket", "AWS", "Agile"],
   },
   {
@@ -66,7 +66,7 @@ export const experiences = [
     location: "Pune, IN",
     type: "Full-time",
     date: "2021 - 2022",
-    description: "Spearheaded the development of a microservices-based inventory system using Spring Boot, React.js, and MongoDB, improving stock accuracy and automating operations across multiple locations. Migrated backend services to Azure Kubernetes Service (AKS), reducing downtime and integrating Apache Kafka for real-time updates. Managed the entire software development lifecycle, delivering the project two weeks ahead of schedule while optimizing costs.",
+    // description: "Spearheaded the development of a microservices-based inventory system using Spring Boot, React.js, and MongoDB, improving stock accuracy and automating operations across multiple locations. Migrated backend services to Azure Kubernetes Service (AKS), reducing downtime and integrating Apache Kafka for real-time updates. Managed the entire software development lifecycle, delivering the project two weeks ahead of schedule while optimizing costs.",
     skills: ["Java", "Spring boot", "React", "Azure Kubernetes Service(AKS)", "MongoDB", "Kafka", "REST API", "Jenkins"],
   },
   {
@@ -75,7 +75,7 @@ export const experiences = [
     location: "Bangalore, IN",
     type: "Full-time",
     date: "2019 - 2021",
-    description: "Developed 3+ full-stack applications, improving scalability and engagement. Built an management web app with Spring Boot and MySQL, optimizing API performance. Designed a CRM dashboard using React.js, Redux, and MongoDB for efficient data handling. Architected an e-commerce backend with Node.js and PayPal integration, ensuring reliable transactions. Improved CI/CD pipelines with Jenkins and Docker while enhancing security with Spring Security and JUnit testing.",
+    // description: "Developed 3+ full-stack applications, improving scalability and engagement. Built an management web app with Spring Boot and MySQL, optimizing API performance. Designed a CRM dashboard using React.js, Redux, and MongoDB for efficient data handling. Architected an e-commerce backend with Node.js and PayPal integration, ensuring reliable transactions. Improved CI/CD pipelines with Jenkins and Docker while enhancing security with Spring Security and JUnit testing.",
     skills: ["Java", "Spring boot", "React", "Node.js", "Express", "AWS", "MySQL", "MongoDB", "Docker", "Jenkins"],
   },
 ];
@@ -131,6 +131,19 @@ export const projects = [
   },
   {
     id: 3,
+    title: "EvenToday: Event Planner",
+    des: "This platform facilitates seamless collaboration among event organizers, vendors, and attendees, offering tools for scheduling, budget tracking, and real-time updates.",
+    img: "images/projects/project6.png",
+    icons: [
+      { icon: SiSwift, color: "#F05138" },  // Swift (Programming Language)
+      { icon: SiFirebase, color: "#FFCA28" },  // Firebase
+      { icon: SiXcode, color: "#147EFB" },  // Xcode
+      { icon: SiSwift, color: "#007ACC" },  // SwiftUI
+    ],
+    link: "https://github.com/devika7300/EvenToday",
+  },
+  {
+    id: 4,
     title: "Real-Time Movie Ticket Booking System",
     des: "Developed a web application using Django REST Framework and React TypeScript, featuring real-time seat availability updates, modular microservices architecture, and multithreaded operations for efficient concurrent booking management.",
     img: "images/projects/movie.jpg",
@@ -144,7 +157,7 @@ export const projects = [
     link: "https://github.com/devika7300/real-time-movie-ticket-booking-system",
   },
   {
-    id: 4,
+    id: 5,
     title: "E-commerce Backend Application",
     des: " E-commerce app with functionalities such as product listings, categories, order processing, shopping carts, and user profiles which supports smooth scalability as business needs grow.",
     img: "images/projects/project3.png",
@@ -159,22 +172,8 @@ export const projects = [
     
     link: "https://github.com/devika7300/Spring-boot-ecommerce-app",
   },
-  // {
-  //   id: 4,
-  //   title: "Green Guardian - Automated Plant Care System",
-  //   des: "Developed an IoT-based automated plant care system that monitors soil moisture and temperature, triggering automated watering.",
-  //   img: "images/projects/project4.png",
-  //   icons: [
-  //     { icon: FaJava, color: "#007396" },  // Core Java
-  //     { icon: FaCloud, color: "#0B2C4A" },  // Using a cloud icon for ThingSpeak
-  //     { icon: FaAndroid, color: "#3DDC84" },  // Android Development
-  //     { icon: FaMicrochip, color: "#E7352C" },  // Using a microchip icon for ESP32 Microcontrollers
-  //     { icon: FaRaspberryPi, color: "#C51A4A" }   // ESP32 Microcontrollers (Espressif is the company behind ESP32, using the company color)
-  //   ],
-  //   link: "https://github.com/devika7300/Green-Gardian?tab=readme-ov-file",
-  // },
   {
-    id: 5,
+    id: 6,
     title: "Shift Management",
     des: "A web application that enables streamlined scheduling, real-time adjustments, and enhanced visibility into workforce allocation, thereby boosting overall operational efficiency and reducing labor costs.",
     img: "images/projects/project5.png",
@@ -186,18 +185,5 @@ export const projects = [
       { icon: FaTasks, color: "#0074D9" },  // Kanban (Using a tasks icon in a blue shade as a symbolic representation)
     ],
     link: "https://github.com/devika7300/Shift-Management",
-  },
-  {
-    id: 6,
-    title: "EvenToday: Event Planner",
-    des: "This platform facilitates seamless collaboration among event organizers, vendors, and attendees, offering tools for scheduling, budget tracking, and real-time updates.",
-    img: "images/projects/project6.png",
-    icons: [
-      { icon: SiSwift, color: "#F05138" },  // Swift (Programming Language)
-      { icon: SiFirebase, color: "#FFCA28" },  // Firebase
-      { icon: SiXcode, color: "#147EFB" },  // Xcode
-      { icon: SiSwift, color: "#007ACC" },  // SwiftUI
-    ],
-    link: "https://github.com/devika7300/EvenToday",
   },
 ];

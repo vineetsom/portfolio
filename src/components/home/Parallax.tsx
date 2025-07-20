@@ -241,17 +241,17 @@ const Parallax = () => {
           {/* <span>I'm a</span> */}
           <ContinuousTypewriter 
             words={[
-              "Software Developer",
+              "Software Engineer",
+              "iOS Engineer",
               "Full Stack Developer",
               "Backend Developer",
               "Frontend Developer",
-              "Java Developer"
             ]}
             className="text-white min-w-[12ch]"
           />
           
         </div>
-        <p className={`${spaceGrotesk.className} text-[10px] xs:text-xs sm:text-sm md:text-lg text-white/80 mt-0 mb-4 mx-auto tracking-wide font-light`}>Actively seeking Software Developer roles</p>
+        {/* <p className={`${spaceGrotesk.className} text-[10px] xs:text-xs sm:text-sm md:text-lg text-white/80 mt-0 mb-4 mx-auto tracking-wide font-light`}>Actively seeking Software Developer roles</p> */}
         <div className="flex justify-center gap-6">
           <motion.a
             href="https://github.com/devika7300"

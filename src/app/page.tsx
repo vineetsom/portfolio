@@ -1,5 +1,5 @@
 import About from '../components/home/About';
-import ExperienceEducation from '../components/home/ExperienceEducation';
+import EducationSection from '../components/home/ExperienceEducation';
 import Certifications from '../components/home/Certifications';
 import { AllProjects } from '../components/home/AllProjects';
 import Parallax from '../components/home/Parallax';
@@ -26,7 +26,7 @@ export default function Home() {
       </section>
       
       <section className="relative bg-neutral-50 dark:bg-black w-full">
-        <ExperienceEducation />
+        <EducationSection />
       </section>
       
       <section className="relative bg-white dark:bg-neutral-950 w-full">
