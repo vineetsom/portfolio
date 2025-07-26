@@ -235,7 +235,7 @@ const Parallax = () => {
           From logic to Legos, I build solutions with precision.
         </p>
         <h1 className={`${playfair.className} text-xl xs:text-2xl sm:text-4xl md:text-6xl lg:text-8xl font-bold text-white mb-2 sm:mb-4 tracking-wider`}>
-          Devika Shendkar
+          Vineet Somwanshi
         </h1>
         <div className={`${playfair.className} text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl text-white/90 mb-2 sm:mb-4 font-light tracking-widest relative h-[1.5em] flex items-center justify-center gap-2`}>
           {/* <span>I'm a</span> */}
@@ -254,7 +254,7 @@ const Parallax = () => {
         {/* <p className={`${spaceGrotesk.className} text-[10px] xs:text-xs sm:text-sm md:text-lg text-white/80 mt-0 mb-4 mx-auto tracking-wide font-light`}>Actively seeking Software Developer roles</p> */}
         <div className="flex justify-center gap-6">
           <motion.a
-            href="https://github.com/devika7300"
+            href="https://github.com/vineetsom"
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.1 }}
@@ -264,7 +264,7 @@ const Parallax = () => {
             <FaGithub className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
           </motion.a>
           <motion.a
-            href="https://www.linkedin.com/in/devika-shendkar/"
+            href="https://www.linkedin.com/in/vineet-somwanshi/"
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.1 }}

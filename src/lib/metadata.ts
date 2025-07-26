@@ -6,11 +6,11 @@ import { SiSpringboot, SiMysql, SiTypescript, SiNextdotjs, SiChartdotjs, SiTailw
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
 
 export const siteMetadata = {
-  title: 'Devika Shendkar - Portfolio',
+  title: 'Vineet Somwanshi - Portfolio',
   description: 'Professional portfolio showcasing full-stack development projects and skills',
-  author: 'Devika Shendkar',
-  siteUrl: 'https://devika7300.github.io/portfolio/',
-  twitterHandle: '@devika',
+  author: 'Vineet Somwanshi',
+  siteUrl: 'https://your-portfolio-url.com/',
+  twitterHandle: '@vsomwanshi',
 };
 
 export const generateMetadata = (path: string): Metadata => {
@@ -28,7 +28,7 @@ export const generateMetadata = (path: string): Metadata => {
       type: 'website',
       images: [
         {
-          url: `${currentUrl}/images/devika1.png`,
+          url: `${currentUrl}/images/profile1.png`,
           width: 1200,
           height: 630,
           alt: siteMetadata.title,
@@ -40,7 +40,7 @@ export const generateMetadata = (path: string): Metadata => {
       title: siteMetadata.title,
       description: siteMetadata.description,
       creator: siteMetadata.twitterHandle,
-      images: [`${currentUrl}/images/devika1.png`],
+      images: [`${currentUrl}/images/profile1.png`],
     },
     robots: {
       index: true,
@@ -52,138 +52,69 @@ export const generateMetadata = (path: string): Metadata => {
 
 export const experiences = [
   {
-    title: "Full Stack Developer",
-    company: "PTC",
-    location: "Boston, MA",
-    type: "Full-time",
-    date: "2024 - 2025",
-    // description: "Built an event-driven data processing system using the PERN stack with WebSocket, improving real-time data processing. Optimized RESTful APIs with caching and load balancing for better reliability. Enhanced system architecture with AWS services while collaborating in an Agile environment.",
-    skills: ["PostgreSQL", "Express", "React.js", "Node.js", "WebSocket", "AWS", "Agile"],
+    title: "Fullstack Software Engineering Intern",
+    company: "SeattleU Software Company",
+    location: "Seattle, WA",
+    type: "Internship",
+    date: "06/2024 - Present",
+    skills: ["Go", "React", "Gin", "Microservices", "Webhook", "Retry Mechanisms"],
   },
   {
-    title: "Application Development Associate",
-    company: "Accenture",
-    location: "Pune, IN",
+    title: "Software Engineer",
+    company: "Simplify Healthcare Pvt. Ltd.",
+    location: "Pune, India",
     type: "Full-time",
-    date: "2021 - 2022",
-    // description: "Spearheaded the development of a microservices-based inventory system using Spring Boot, React.js, and MongoDB, improving stock accuracy and automating operations across multiple locations. Migrated backend services to Azure Kubernetes Service (AKS), reducing downtime and integrating Apache Kafka for real-time updates. Managed the entire software development lifecycle, delivering the project two weeks ahead of schedule while optimizing costs.",
-    skills: ["Java", "Spring boot", "React", "Azure Kubernetes Service(AKS)", "MongoDB", "Kafka", "REST API", "Jenkins"],
+    date: "07/2021 - 05/2023",
+    skills: ["AWS DynamoDB", "AWS Lambda", "SQS", "EventBridge", "Step Functions", "S3", "RDS", "Microservices"],
   },
   {
-    title: "Software Developer",
-    company: "Sigma Infosolutions Ltd.",
-    location: "Bangalore, IN",
-    type: "Full-time",
-    date: "2019 - 2021",
-    // description: "Developed 3+ full-stack applications, improving scalability and engagement. Built an management web app with Spring Boot and MySQL, optimizing API performance. Designed a CRM dashboard using React.js, Redux, and MongoDB for efficient data handling. Architected an e-commerce backend with Node.js and PayPal integration, ensuring reliable transactions. Improved CI/CD pipelines with Jenkins and Docker while enhancing security with Spring Security and JUnit testing.",
-    skills: ["Java", "Spring boot", "React", "Node.js", "Express", "AWS", "MySQL", "MongoDB", "Docker", "Jenkins"],
+    title: "Software Engineer Intern",
+    company: "Vedang Infotech Pvt. Ltd.",
+    location: "Pune, India",
+    type: "Internship",
+    date: "01/2020 - 06/2020",
+    skills: ["Kafka", "AWS Lambda", "DynamoDB", "gRPC", "Prometheus", "Grafana", "AWS Lookout for Metrics"],
   },
 ];
 
 export const education = [
   {
     title: "Master of Science in Computer Science",
-    institution: "Syracuse University",
-    location: "Syracuse, NY",
-    date: "2022 - 2024",
+    institution: "Seattle University",
+    location: "Seattle, WA, USA",
+    date: "09/2023 - 12/2025",
   },
   {
-    title: "Bachelor of Engineering in Information Technology",
-    institution: "University of Pune",
-    location: "Pune, IN",
-    date: "2017 - 2021",
+    title: "Bachelor of Technology in Computer Science",
+    institution: "MIT World Peace University",
+    location: "Pune, India",
+    date: "06/2018 - 05/2021",
   }
 ];
 
 export const projects = [
   {
     id: 1,
-    title: "TrustVault - Online Banking Platform",
-    des: "An online banking platform that features secure account management, efficient fund transfers, and a real-time dashboard to enhance user decision-making across various devices.",
+    title: "Artificial Neural Network-Based Chronic Disease Prediction",
+    des: "Developed an ANN system for chronic disease prediction (anemia and hypertension) using image processing and hybrid SOM algorithms. Designed a user-friendly GUI for pathologists to streamline patient registration, blood image analysis, and automated reporting. Published research in IRJET and IJARESM journals.",
     img: "images/projects/project1.jpg",
     icons: [
-      { icon: SiTypescript, color: "#3178C6" },  // TypeScript
-      { icon: SiNextdotjs, color: "#000000" },  // Next.js
-      { icon: SiChartdotjs, color: "#FF6384" },  // Chart.js
-      { icon: SiTailwindcss, color: "#38B2AC" },  // Tailwind CSS
-      { icon: FaMoneyCheckAlt, color: "#00FF94" },  // Plaid (Color is assumed as no official color is widely recognized)
-      { icon: SiAppwrite, color: "#F02E65" },  // Appwrite
-      { icon: FaExchangeAlt, color: "#FF7400" }  // Dwolla (Color is assumed as no official color is widely recognized)
+      { icon: FaJava, color: "#007396" },
+      // Add appropriate icon for C# or replace with a similar icon
+      { icon: SiMysql, color: "#4479A1" },
     ],
-    link: "https://github.com/devika7300/trustvault-app",
+    link: "https://github.com/vineetsom/ann-chronic-disease-prediction",
   },
   {
     id: 2,
-    title: "TaskTrail - Project Management Application",
-    des: "Developed a project management dashboard that supports light/dark mode, task tracking, assignment, and timeline management, enhancing collaboration and data integrity.",
+    title: "Distributed Messaging and Consensus System",
+    des: "Designed a distributed system combining Pub-Sub messaging, DHT for decentralized storage, and Bully Algorithm for leader election. Secured tamper-proof logs using Blockchain.",
     img: "images/projects/project2.png",
     icons: [
-      { icon: SiNextdotjs, color: "#000000" },  // Next.js
-      { icon: SiTypescript, color: "#3178C6" },  // TypeScript
-      { icon: SiNodedotjs, color: "#339933" },  // Node.js
-      { icon: SiExpress, color: "#000000" },  // Express.js (No official color, commonly represented in black)
-      { icon: FaAws, color: "#FF9900" },  // Amazon Web Services (AWS)
-      { icon: SiTailwindcss, color: "#38B2AC" },  // Tailwind CSS
-      { icon: SiPostgresql, color: "#336791" },  // PostgreSQL
+      { icon: SiMysql, color: "#4479A1" },
+      { icon: FaJava, color: "#007396" },
+      // Add appropriate icon for Blockchain or replace with a similar icon
     ],
-    
-    link: "https://github.com/devika7300/project-management-tasktrail-app",
-  },
-  {
-    id: 3,
-    title: "EvenToday: Event Planner",
-    des: "This platform facilitates seamless collaboration among event organizers, vendors, and attendees, offering tools for scheduling, budget tracking, and real-time updates.",
-    img: "images/projects/project6.png",
-    icons: [
-      { icon: SiSwift, color: "#F05138" },  // Swift (Programming Language)
-      { icon: SiFirebase, color: "#FFCA28" },  // Firebase
-      { icon: SiXcode, color: "#147EFB" },  // Xcode
-      { icon: SiSwift, color: "#007ACC" },  // SwiftUI
-    ],
-    link: "https://github.com/devika7300/EvenToday",
-  },
-  {
-    id: 4,
-    title: "Real-Time Movie Ticket Booking System",
-    des: "Developed a web application using Django REST Framework and React TypeScript, featuring real-time seat availability updates, modular microservices architecture, and multithreaded operations for efficient concurrent booking management.",
-    img: "images/projects/movie.jpg",
-    icons: [
-      { icon: SiDjango, color: "#092E20" },  // Django
-      { icon: SiReact, color: "#61DAFB" },  // React
-      { icon: SiTypescript, color: "#3178C6" },  // TypeScript
-      { icon: SiFirebase, color: "#FFCA28" },  // Firebase
-      { icon: FaStripeS, color: "#008CDD" }  // Stripe (Using Stripe S icon as there's no specific SiStripe)
-  ],
-    link: "https://github.com/devika7300/real-time-movie-ticket-booking-system",
-  },
-  {
-    id: 5,
-    title: "E-commerce Backend Application",
-    des: " E-commerce app with functionalities such as product listings, categories, order processing, shopping carts, and user profiles which supports smooth scalability as business needs grow.",
-    img: "images/projects/project3.png",
-    icons: [
-      { icon: SiSpring, color: "#6DB33F" },  // Spring Boot
-      { icon: FaJava, color: "#007396" },  // Java
-      { icon: SiPostman, color: "#FF6C37" },  // Postman
-      { icon: SiPostgresql, color: "#336791" },  // PostgreSQL
-      { icon: SiHibernate, color: "#59666C" },  // Hibernate (Assumed color, as no official color is widely recognized)
-      { icon: SiGithub, color: "#181717" }  // GitHub
-    ],
-    
-    link: "https://github.com/devika7300/Spring-boot-ecommerce-app",
-  },
-  {
-    id: 6,
-    title: "Shift Management",
-    des: "A web application that enables streamlined scheduling, real-time adjustments, and enhanced visibility into workforce allocation, thereby boosting overall operational efficiency and reducing labor costs.",
-    img: "images/projects/project5.png",
-    icons: [
-      { icon: SiMysql, color: "#00758F" },  // MySQL
-       { icon: SiPostman, color: "#FF6C37" },  // Postman
-      { icon: SiSpringboot, color: "#6DB33F" },  // Spring Boot
-      { icon: FaJava, color: "#007396" },  // Java
-      { icon: FaTasks, color: "#0074D9" },  // Kanban (Using a tasks icon in a blue shade as a symbolic representation)
-    ],
-    link: "https://github.com/devika7300/Shift-Management",
+    link: "https://github.com/vineetsom/distributed-messaging-consensus",
   },
 ];

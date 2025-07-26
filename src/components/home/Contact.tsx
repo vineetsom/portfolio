@@ -6,7 +6,10 @@ import { CardHoverEffect } from '../ui/card-hover-effect';
 import { useTheme } from 'next-themes';
 
 export default function Contact() {
-  const email = "devikashendkar7@gmail.com";
+  const email = "vsomwanshi@seattleu.edu";
+  const phone = "(+1) 206-687-6893";
+  const linkedIn = "https://www.linkedin.com/in/vineet-somwanshi/";
+  const github = "https://github.com/vineetsom";
   const { theme } = useTheme();
   const isDark = theme === 'dark';
 
@@ -40,15 +43,15 @@ export default function Contact() {
               ? '!bg-gradient-to-br !from-neutral-900/50 !to-neutral-800/50'
               : '!bg-gradient-to-br !from-white/5 !to-white/10'
           } backdrop-blur-sm !border-0 shadow-lg`}>
-            <div className="p-8">
-              <div className="max-w-sm mx-auto">
+            <div className="p-8 space-y-6">
+              <div className="max-w-sm mx-auto space-y-4">
                 {/* Email */}
                 <div className="text-center">
                   <FaEnvelope className="w-10 h-10 mx-auto mb-4 text-violet-500 dark:text-violet-400" />
-                  <p className="text-lg text-neutral-600 dark:text-neutral-400 mb-4">
+                  <p className="text-lg text-neutral-600 dark:text-neutral-400 mb-1">
                     Email
                   </p>
-                  <p className="text-lg font-medium text-neutral-900 dark:text-white mb-6">
+                  <p className="text-lg font-medium text-neutral-900 dark:text-white mb-2">
                     {email}
                   </p>
                   <motion.a
@@ -69,6 +72,43 @@ export default function Contact() {
                       →
                     </motion.span>
                   </motion.a>
+                </div>
+                {/* Phone */}
+                <div className="text-center">
+                  <p className="text-lg text-neutral-600 dark:text-neutral-400 mb-1">
+                    Phone
+                  </p>
+                  <p className="text-lg font-medium text-neutral-900 dark:text-white mb-2">
+                    {phone}
+                  </p>
+                </div>
+                {/* LinkedIn */}
+                <div className="text-center">
+                  <p className="text-lg text-neutral-600 dark:text-neutral-400 mb-1">
+                    LinkedIn
+                  </p>
+                  <a
+                    href={linkedIn}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-lg font-medium text-violet-600 dark:text-violet-400 hover:underline"
+                  >
+                    {linkedIn}
+                  </a>
+                </div>
+                {/* GitHub */}
+                <div className="text-center">
+                  <p className="text-lg text-neutral-600 dark:text-neutral-400 mb-1">
+                    GitHub
+                  </p>
+                  <a
+                    href={github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-lg font-medium text-violet-600 dark:text-violet-400 hover:underline"
+                  >
+                    {github}
+                  </a>
                 </div>
               </div>
             </div>

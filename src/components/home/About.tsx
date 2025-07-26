@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import imageLoader from '../../lib/imageLoader';
 import { useTheme } from 'next-themes';
+import Vineet from "../../../public/images/Vineet.jpeg";
 
 export default function About() {
   const { theme } = useTheme();
@@ -87,7 +88,7 @@ export default function About() {
                 >
                   <Image
                     loader={imageLoader}
-                    src="images/devika2.png"
+                    src={Vineet}
                     alt="Profile"
                     fill
                     className="object-cover"
@@ -109,13 +110,13 @@ export default function About() {
             className="space-y-8"
           >
             <div className="space-y-2">
-              <motion.h2 
+            <motion.h2 
                 className="text-5xl md:text-7xl font-bold text-zinc-900 dark:text-white"
                 initial={{ y: 20 }}
                 animate={{ y: 0 }}
                 transition={{ duration: 0.5 }}
               >
-                Devika
+                Vineet
               </motion.h2>
               <motion.h2 
                 className="text-5xl md:text-7xl font-bold text-zinc-900 dark:text-white flex items-center gap-4"
@@ -123,7 +124,7 @@ export default function About() {
                 animate={{ y: 0 }}
                 transition={{ duration: 0.5, delay: 0.1 }}
               >
-                Shendkar
+                Somwanshi
                 <motion.div 
                   className="inline-flex items-center justify-center bg-violet-600 text-white px-4 py-2 rounded-full"
                   animate={{ 
@@ -156,11 +157,16 @@ export default function About() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.5 }}
             >
-              I&apos;m a passionate software developer with a Master&apos;s degree 
-              in Computer Science from Syracuse University and experience specializing 
-              in Full-Stack and Mobile Application Development. I am dedicated to 
-              building scalable and user-friendly applications. 
+              From logic to Legos, I build solutions with precision.
             </motion.p>
+            <motion.h4
+              className="text-xl md:text-2xl font-semibold text-zinc-900 dark:text-white mt-4"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.6 }}
+            >
+              Vineet Somwanshi
+            </motion.h4>
 
             <motion.a
               href="#contact"

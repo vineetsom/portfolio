@@ -7,16 +7,22 @@ import { useTheme } from 'next-themes';
 
 const certifications = [
   {
+    title: "AWS Cloud Practitioner Certification",
+    subtitle: "Amazon Web Services",
+    date: "2023",
+    link: "https://www.your-certification-link.com/aws-cloud-practitioner"
+  },
+  {
     title: "Core Java Programming Course",
     subtitle: "Rooman Technologies",
     date: "Aug 2020",
-    link: "https://www.linkedin.com/in/devika-shendkar/details/certifications/1706639397962/single-media-viewer/?profileId=ACoAAC3gUkoB0KAkIkd9-g8wEOW2BdP8zE-zVyk"
+    link: "https://www.linkedin.com/in/vineet-somwanshi/details/certifications/your-java-certification-link"
   },
   {
     title: "REST APIs with Spring and Java Skill Path",
     subtitle: "Codecademy",
     date: "Apr 2024",
-    link: "https://www.codecademy.com/profiles/digital2389255491/certificates/60f1edf0ac9368001c6025c4"
+    link: "https://www.codecademy.com/profiles/vineetsomwanshi/certificates/60f1edf0ac9368001c6025c4"
   },
   {
     title: "J.P. Morgan - Software Engineering Job Simulation",
@@ -28,13 +34,13 @@ const certifications = [
     title: "Android Developer Course",
     subtitle: "Udemy",
     date: "May 2020",
-    link: "UC-cf67ca0c-e646-45f4-82a0-d1631149fe04"
+    link: "https://www.udemy.com/certificate/your-android-course-certification"
   },
   {
     title: "Winner - Smart India Hackathon 2019",
     subtitle: "Govt Of India",
     date: "Mar 2019",
-    link: "https://www.linkedin.com/in/devika-shendkar/details/certifications/1706639458616/single-media-viewer/?profileId=ACoAAC3gUkoB0KAkIkd9-g8wEOW2BdP8zE-zVyk"
+    link: "https://www.linkedin.com/in/vineet-somwanshi/details/awards/your-award-link"
   },
 ];
 
