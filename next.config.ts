@@ -6,7 +6,7 @@ const nextConfig = {
     domains: ['github.com', 'linkedin.com', 'medium.com'], // Add domains for images if needed
   },
   swcMinify: true,
-  basePath: '/portfolio/',
+  basePath: '/portfolio',
   assetPrefix: '/portfolio/',
 }
 
