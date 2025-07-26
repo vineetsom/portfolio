@@ -47,7 +47,7 @@ jobs:
       - name: List output directory
         run: ls -la out
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-pages-artifact@v4
         with:
           path: ./out
 
