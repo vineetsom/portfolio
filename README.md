@@ -4,7 +4,7 @@ A modern, responsive portfolio website built with Next.js, TypeScript, and Tailw
 
 ## Live Demo
 
-Visit the live portfolio at:[https://devikashendkar.com/](https://devikashendkar.com/)
+Visit the live portfolio at:[https://vineetsomwanshi.com/](https://vineetsomwanshi.com/)
 
 ## Features
 
@@ -42,7 +42,7 @@ Visit the live portfolio at:[https://devikashendkar.com/](https://devikashendkar
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/devika7300/portfolio.git
+git clone https://github.com/vineetsom/portfolio.git
 ```
 
 2. Install dependencies:
@@ -72,7 +72,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Author
 
-**Devika Shendkar**
-- Portfolio: [https://devikashendkar.com/](https://devikashendkar.com/)
-- LinkedIn: [devika-shendkar](https://www.linkedin.com/in/devika-shendkar/)
-- GitHub: [@devika7300](https://github.com/devika7300)
+**Vineet Somwanshi**
+- Portfolio: [https://vineetsomwanshi.com/](https://vineetsomwanshi.com/)
+- LinkedIn: [vineet-somwanshi](https://www.linkedin.com/in/vineet-somwanshi/)
+- GitHub: [@vineetsom](https://github.com/vineetsom)

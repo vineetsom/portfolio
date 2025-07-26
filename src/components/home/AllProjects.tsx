@@ -149,7 +149,7 @@ export function AllProjects(): JSX.Element {
           transition={{ delay: 0.5 }}
         >
           <a
-            href="https://github.com/devika7300"
+            href="https://github.com/vineetsom"
             target="_blank"
             rel="noopener noreferrer"
             className={`group relative px-5 py-2 rounded-full text-sm font-medium ${
