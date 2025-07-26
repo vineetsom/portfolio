@@ -85,7 +85,7 @@ export default function Footer() {
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <p className="text-center text-sm text-neutral-600 dark:text-neutral-400">
-              © {currentYear} Devika Shendkar. All rights reserved.
+              © {currentYear} Vineet Somwanshi. All rights reserved.
             </p>
           </motion.div>
         </div>
